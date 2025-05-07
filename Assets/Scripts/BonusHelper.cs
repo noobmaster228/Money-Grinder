@@ -20,11 +20,11 @@ public static class BonusHelper
         switch (tag)
         {
             case "+Speed": return "+1 Speed";
-            case "+Money": return "+15 Money";
+            case "+Money": return "+100 Money";
             case "+Points": return "+20 Points per second";
             case "+Multi": return "+0.5 Money Multiplier";
             case "-Speed": return "-1 Speed";
-            case "-Money": return "-15 Money";
+            case "-Money": return "-100 Money";
             case "-Points": return "-20 Points per second";
             case "-Multi": return "-0.5 Money Multiplier";
             default: return "";

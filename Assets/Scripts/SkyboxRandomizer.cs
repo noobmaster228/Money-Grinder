@@ -2,16 +2,27 @@ using UnityEngine;
 
 public class SkyboxRandomizer : MonoBehaviour
 {
-    public Material[] skyboxes; // Присвой сюда все скайбоксы в инспекторе
+    [System.Serializable]
+    public struct SkyboxWithFog
+    {
+        public Material skybox;
+        public Color fogColor;
+    }
+
+    public SkyboxWithFog[] skyboxesWithFog;
 
     void Start()
     {
-        if (skyboxes.Length == 0) return;
+        if (skyboxesWithFog.Length == 0) return;
 
-        Material chosenSkybox = skyboxes[Random.Range(0, skyboxes.Length)];
-        RenderSettings.skybox = chosenSkybox;
+        var chosen = skyboxesWithFog[Random.Range(0, skyboxesWithFog.Length)];
 
-        // Чтобы эффект применился сразу (если нужен), можно обновить шейдер
+        RenderSettings.skybox = chosen.skybox;
+        RenderSettings.fog = true;
+        RenderSettings.fogColor = chosen.fogColor;
+        RenderSettings.fogMode = FogMode.ExponentialSquared;
+        RenderSettings.fogDensity = 0.03f;
+
         DynamicGI.UpdateEnvironment();
     }
 }

@@ -17990,10 +17990,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2241920988310840061, guid: a1197062e7da3ac4cbc95c3491133b61, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d3b1bee0783c86c45b110b351de882db, type: 2}
     - target: {fileID: 5336317462187070654, guid: a1197062e7da3ac4cbc95c3491133b61, type: 3}
       propertyPath: m_Name
       value: Bonus Wall
       objectReference: {fileID: 0}
+    - target: {fileID: 6998785185484921818, guid: a1197062e7da3ac4cbc95c3491133b61, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 372009323a17751429e9da69aee442e3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1197062e7da3ac4cbc95c3491133b61, type: 3}
 --- !u!4 &5792928366843435700 stripped

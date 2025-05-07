@@ -48,6 +48,7 @@ public class Moving : MonoBehaviour
     public float CreditcardMoney;
     public float CreditcardCount;
     public ChunkPlacer triggerActivator;
+    public WaterScroller waterSpeed;
     void Start()
     {
         CreditcardMoney = 50;
@@ -149,19 +150,21 @@ public class Moving : MonoBehaviour
         {
             case "+Speed":
                 speed += 1;
+                waterSpeed.scrollSpeed += 0.01f;
                 break;
             case "-Speed":
                 speed -= 1;
-                if(speed == 0)
+                waterSpeed.scrollSpeed -= 0.01f;
+                if (speed == 0)
                 {
                     Death();
                 }
                 break;
             case "+Money":
-                MoneyCount += 15;
+                MoneyCount += 100;
                 break;
             case "-Money":
-                MoneyCount -= 15;
+                MoneyCount -= 100;
                 break;
             case "+Points":
                 PointsRate += 10;
