@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - +Speed
+  - -Speed
+  - +Money
+  - -Money
+  - +Points
+  - -Points
+  - Money
+  - MoneyBag
+  - BadMoney
+  - BadMoneyBag
+  - DeathPit
+  - Protection
+  - +Multi
+  - -Multi
+  - noColor
+  - creditcard
+  - ATM
+  - trigger
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
