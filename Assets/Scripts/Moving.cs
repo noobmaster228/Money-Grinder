@@ -121,21 +121,21 @@ public class Moving : MonoBehaviour
             MoneyCountField.text = MoneyCount.ToString();
             PointsField.text = Points.ToString();
             MultiField.text = multiply.ToString();
-            if(CreditcardField)
-            { CreditcardField.text = "(" + CreditcardCount.ToString() + ")";}
-            
+            if (CreditcardField)
+            { CreditcardField.text = "(" + CreditcardCount.ToString() + ")"; }
+
         }
         if (transform.position.y <= -2.2495f)
         {
             Death();
         }
-       /* if ((transform.position.x <= endPos.x) && (isTimerOn))
-        {
-            t = 0;
-            isTimerOn = false;
-            StartCoroutine(ResultCount());
+        /* if ((transform.position.x <= endPos.x) && (isTimerOn))
+         {
+             t = 0;
+             isTimerOn = false;
+             StartCoroutine(ResultCount());
 
-        }*/
+         }*/
     }
     public void StartTimer()
     {
@@ -487,10 +487,10 @@ public class Moving : MonoBehaviour
         {
             foreach (var item in badMoneyRend[i].GetComponentsInChildren<MeshRenderer>())
             {
-               Debug.Log(item.material + " " + badBagMat);
-                if (item.material.name.Substring(6,3)!=badBagMat.name.Substring(6, 3))
-                {  item.material = goodMat; }
-              
+                Debug.Log(item.material + " " + badBagMat);
+                if (item.material.name.Substring(6, 3) != badBagMat.name.Substring(6, 3))
+                { item.material = goodMat; }
+
             }
 
             //  badMoneyRend[i].GetComponentInChildren<MeshRenderer>().material = goodMat;
@@ -501,10 +501,10 @@ public class Moving : MonoBehaviour
         colourSlider.gameObject.SetActive(true);
         colourSlider.value = 7f;
         float time = 0f;
-        while (time<7f)
+        while (time < 7f)
         {
 
-            colourSlider.value = Mathf.Lerp(7f,0f, time / 7f);
+            colourSlider.value = Mathf.Lerp(7f, 0f, time / 7f);
             time += Time.deltaTime;
             yield return null;
         }
