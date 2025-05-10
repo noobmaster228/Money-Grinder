@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneNum: 0
-  multiply: 1
+  multiply: 0.5
   speed: 4
   moneybagValue: 10
   badMoneybagValue: 20
@@ -153,6 +153,7 @@ MonoBehaviour:
   wip: {fileID: 0}
   MainMenu: {fileID: 0}
   GameOver: {fileID: 0}
+  PauseButton: {fileID: 0}
   CreditcardField: {fileID: 0}
   MoneyCount: 0
   MoneyCountField: {fileID: 0}

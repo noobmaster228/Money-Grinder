@@ -40,11 +40,15 @@ public class MobilePlayerController : MonoBehaviour
 
             delta = direction * speed * Time.deltaTime;
         }
-
+        /*if(transform.position.y <= -2.2495f)
+        {
+            limit = 200;
+        }*/
         transform.position = new Vector3(
             transform.position.x,
             transform.position.y,
             Mathf.Clamp(transform.position.z + delta, -limit, limit)
         );
     }
+    
 }

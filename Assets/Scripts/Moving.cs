@@ -34,6 +34,7 @@ public class Moving : MonoBehaviour
     public GameObject wip;
     public GameObject MainMenu;
     public GameObject GameOver;
+    public GameObject PauseButton;
     public Text CreditcardField;
     public float MoneyCount;
     public Text MoneyCountField;
@@ -49,6 +50,8 @@ public class Moving : MonoBehaviour
     public float CreditcardCount;
     public ChunkPlacer triggerActivator;
     public WaterScroller waterSpeed;
+    public Rigidbody falling;
+    MobilePlayerController limits;
     void Start()
     {
         CreditcardMoney = 50;
@@ -64,6 +67,7 @@ public class Moving : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         isPause = false;
         isShield = false;
+        limits = GetComponent<MobilePlayerController>();
     }
 
     void Update()
@@ -110,13 +114,11 @@ public class Moving : MonoBehaviour
                 delta = -speed * Time.deltaTime;
 
             }
-
             if (Input.GetKey(KeyCode.D))
             {
                 delta = speed * Time.deltaTime;
 
             }
-            //Mathf.Clamp(delta, -2, 2);
             transform.position = new Vector3(transform.position.x, transform.position.y, Mathf.Clamp(transform.position.z + delta, -1.8f, 1.8f));
             MoneyCountField.text = MoneyCount.ToString();
             PointsField.text = Points.ToString();
@@ -125,22 +127,24 @@ public class Moving : MonoBehaviour
             { CreditcardField.text = "(" + CreditcardCount.ToString() + ")"; }
 
         }
-        if (transform.position.y <= -2.2495f)
+        /*if (transform.position.y <= -2.2495f)
         {
+            limits.limit = 200;
             Death();
+        }*/
+        if ((transform.position.x <= endPos.x) && (isTimerOn) && (SceneNum != 9))
+        {
+            t = 0;
+            isTimerOn = false;
+            StartCoroutine(ResultCount());
         }
-        /* if ((transform.position.x <= endPos.x) && (isTimerOn))
-         {
-             t = 0;
-             isTimerOn = false;
-             StartCoroutine(ResultCount());
-
-         }*/
     }
     public void StartTimer()
     {
+        PauseButton.SetActive(true);
         isTimerOn = true;
         Button.SetActive(false);
+        StartCoroutine(StartAcceleration(speed));
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -189,6 +193,8 @@ public class Moving : MonoBehaviour
                 other.gameObject.SetActive(false);
                 break;
             case "DeathPit":
+                limits.limit = 200;
+                other.tag = "Untagged";
                 if (isShield)
                 {
                     StartCoroutine(ShieldBreak());
@@ -324,16 +330,51 @@ public class Moving : MonoBehaviour
 
     }
     IEnumerator grayCor;
-    public void Death()
+    IEnumerator ResultCount2()
     {
-        GameOver.gameObject.SetActive(true);
-        rest.gameObject.SetActive(true);
-        exit.gameObject.SetActive(true);
-        pausemenu.gameObject.SetActive(true);
-        MainMenu.gameObject.SetActive(true);
-        isTimerOn = false;
+        yield return new WaitForSeconds(1.5f);
+        transform.position = endPos;
+        yield return new WaitForSeconds(0.5f);
+        res.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1.5f);
+        Result += Points;
+        Points = 0;
+        PointsField.text = Points.ToString();
+        ResultField.text = Result.ToString();
+        yield return new WaitForSeconds(0.5f);
+        MoneyCount *= multiply;
+        MoneyCountField.text = MoneyCount.ToString();
+        yield return new WaitForSeconds(1f);
+        Result += MoneyCount;
+        MoneyCountField.text = MoneyCount.ToString();
+        ResultField.text = Result.ToString();
+        MoneyCount = 0;
+        ResultField.text = Result.ToString();
+        yield return new WaitForSeconds(1f);
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        rest.gameObject.SetActive(true);
+        exit.gameObject.SetActive(true);
+        MainMenu.gameObject.SetActive(true);
+    }
+    public void Death()
+    {
+        Destroy(falling);
+        GameOver.gameObject.SetActive(true);
+        pausemenu.gameObject.SetActive(true);
+        isTimerOn = false;
+        if (SceneNum == 9)
+        {
+            StartCoroutine(ResultCount2());
+        }
+        else
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            rest.gameObject.SetActive(true);
+            exit.gameObject.SetActive(true);
+            MainMenu.gameObject.SetActive(true);
+        }
     }
     public void ContinueGame()
     {
@@ -347,6 +388,7 @@ public class Moving : MonoBehaviour
         pausemenu.gameObject.SetActive(false);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        PauseButton.SetActive(true);
     }
     public void ContinueGame2()
     {
@@ -358,6 +400,7 @@ public class Moving : MonoBehaviour
         pausemenu.gameObject.SetActive(false);
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        PauseButton.SetActive(true);
     }
     public void Pauser()
     {
@@ -371,6 +414,7 @@ public class Moving : MonoBehaviour
         pausemenu.gameObject.SetActive(true);
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        PauseButton.SetActive(false);
     }
     public void Pauser2()
     {
@@ -382,6 +426,7 @@ public class Moving : MonoBehaviour
         pausemenu.gameObject.SetActive(true);
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        PauseButton.SetActive(false);
     }
     public void ExitGame()
     {
@@ -524,8 +569,37 @@ public class Moving : MonoBehaviour
     }
     public void NextLevel()
     {
-        SceneManager.LoadScene(SceneNum + 1);
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+        if (SceneNum < 8)
+        {
+            SceneManager.LoadScene(SceneNum + 1);
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
+        else
+        {
+            wip.SetActive(true);
+            goodjob.gameObject.SetActive(false);
+            rest.gameObject.SetActive(false);
+            pausemenu.gameObject.SetActive(true);
+            exit.gameObject.SetActive(true);
+            MainMenu.gameObject.SetActive(true);
+        }
+    }
+    public void BeginGenLVL()
+    {
+        SceneManager.LoadScene(9);
+    }
+    IEnumerator StartAcceleration(float speedy)
+    {
+        speed = 0;
+        yield return new WaitForSeconds(0.25f);
+        speed = 0.5f;
+        yield return new WaitForSeconds(0.5f);
+        speed = 1f;
+        for (int i = 0; i < speedy - 1; i++)
+        {
+            yield return new WaitForSeconds(1f);
+            speed += 1;
+        }
     }
 }

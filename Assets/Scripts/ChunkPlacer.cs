@@ -14,7 +14,7 @@ public class ChunkPlacer : MonoBehaviour
     {
         spawnedChunks.Add(FirstChunk);
         currentDifficulty = 1;
-        nextDifficultyThreshold = -200;
+        nextDifficultyThreshold = -75;
         SpawnChunk();
         SpawnChunk();
         SpawnChunk();
@@ -42,7 +42,7 @@ public class ChunkPlacer : MonoBehaviour
         if ((Player.position.x <= nextDifficultyThreshold) && (currentDifficulty < 8))
         {
             currentDifficulty += 1;
-            nextDifficultyThreshold -= 250;
+            nextDifficultyThreshold -= 125;
         }
         else
         {
