@@ -9,16 +9,14 @@ public class MobilePlayerController : MonoBehaviour
 
     void Start()
     {
-#if !UNITY_ANDROID && !UNITY_IOS
-        // Отключаем скрипт, если это не Android или iOS
-        this.enabled = false;
-        return;
-#else
-    screenMiddle = Screen.width / 2f;
-#endif
+        if (!Input.touchSupported || !Application.isMobilePlatform)
+        {
+            this.enabled = false;
+            return;
+        }
+
+        screenMiddle = Screen.width / 2f;
     }
-
-
     void Update()
     {
         float delta = 0f;
@@ -50,5 +48,5 @@ public class MobilePlayerController : MonoBehaviour
             Mathf.Clamp(transform.position.z + delta, -limit, limit)
         );
     }
-    
+
 }

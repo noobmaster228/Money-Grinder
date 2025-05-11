@@ -22,6 +22,7 @@ TagManager:
   - creditcard
   - ATM
   - trigger
+  - SAW
   layers:
   - Default
   - TransparentFX

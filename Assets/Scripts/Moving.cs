@@ -52,6 +52,13 @@ public class Moving : MonoBehaviour
     public WaterScroller waterSpeed;
     public Rigidbody falling;
     MobilePlayerController limits;
+    AudioSource itemAudio;
+    public AudioSource playerAudio;
+    public BonusSoundPlayer BonusSounds;
+    public AudioClip ShieldBreakSound;
+    public AudioClip PointCountSound;
+    public AudioClip MoneyAdd;
+    public AudioClip RoundEndSound;
     void Start()
     {
         CreditcardMoney = 50;
@@ -150,13 +157,16 @@ public class Moving : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        string tag = other.tag;
         switch (other.gameObject.tag)
         {
             case "+Speed":
+                BonusSounds.PlayBonusSound(tag);
                 speed += 1;
                 waterSpeed.scrollSpeed += 0.01f;
                 break;
             case "-Speed":
+                BonusSounds.PlayBonusSound(tag);
                 speed -= 1;
                 waterSpeed.scrollSpeed -= 0.01f;
                 if (speed == 0)
@@ -165,54 +175,80 @@ public class Moving : MonoBehaviour
                 }
                 break;
             case "+Money":
+                BonusSounds.PlayBonusSound(tag);
                 MoneyCount += 100;
                 break;
             case "-Money":
+                BonusSounds.PlayBonusSound(tag);
                 MoneyCount -= 100;
                 break;
             case "+Points":
+                BonusSounds.PlayBonusSound(tag);
                 PointsRate += 10;
                 break;
             case "-Points":
+                BonusSounds.PlayBonusSound(tag);
                 PointsRate -= 10;
                 break;
             case "Money":
+                itemAudio = other.GetComponent<AudioSource>();
+                playerAudio.PlayOneShot(itemAudio.clip);
                 MoneyCount += moneyValue * multiply;
                 other.gameObject.SetActive(false);
                 break;
             case "MoneyBag":
+                itemAudio = other.GetComponent<AudioSource>();
+                playerAudio.PlayOneShot(itemAudio.clip);
                 MoneyCount += moneybagValue * multiply;
                 other.gameObject.SetActive(false);
                 break;
             case "BadMoney":
+                itemAudio = other.GetComponent<AudioSource>();
+                playerAudio.PlayOneShot(itemAudio.clip);
                 other.gameObject.SetActive(false);
                 MoneyCount -= badMoneyValue * multiply;
                 break;
             case "BadMoneyBag":
+                itemAudio = other.GetComponent<AudioSource>();
+                playerAudio.PlayOneShot(itemAudio.clip);
                 MoneyCount -= badMoneybagValue * multiply;
                 other.gameObject.SetActive(false);
                 break;
-            case "DeathPit":
+            case "SAW":
+                itemAudio = other.GetComponent<AudioSource>();
                 limits.limit = 200;
                 other.tag = "Untagged";
                 if (isShield)
                 {
+                    playerAudio.PlayOneShot(ShieldBreakSound);
                     StartCoroutine(ShieldBreak());
                 }
                 else
                 {
+                    playerAudio.PlayOneShot(itemAudio.clip);
                     Death();
                 }
                 break;
+            case "DeathPit":
+                itemAudio = other.GetComponent<AudioSource>();
+                limits.limit = 200;
+                other.tag = "Untagged";
+                playerAudio.PlayOneShot(itemAudio.clip);
+                Death();
+                break;
             case "Protection":
+                itemAudio = other.GetComponent<AudioSource>();
+                playerAudio.PlayOneShot(itemAudio.clip);
                 other.gameObject.SetActive(false);
                 isShield = true;
                 ShitImg.gameObject.SetActive(true);
                 break;
             case "+Multi":
+                BonusSounds.PlayBonusSound(tag);
                 multiply += 0.5f;
                 break;
             case "-Multi":
+                BonusSounds.PlayBonusSound(tag);
                 if (multiply <= 0)
                 {
                     multiply = 0;
@@ -223,6 +259,8 @@ public class Moving : MonoBehaviour
                 }
                 break;
             case "noColor":
+                itemAudio = other.GetComponent<AudioSource>();
+                playerAudio.PlayOneShot(itemAudio.clip);
                 other.gameObject.SetActive(false);
                 if (grayCor != null)
                 { StopCoroutine(grayCor); }
@@ -231,10 +269,14 @@ public class Moving : MonoBehaviour
                 StartCoroutine(grayCor);
                 break;
             case "creditcard":
+                itemAudio = other.GetComponent<AudioSource>();
+                playerAudio.PlayOneShot(itemAudio.clip);
                 other.gameObject.SetActive(false);
                 CreditcardCount += CreditcardMoney * multiply;
                 break;
             case "ATM":
+                itemAudio = other.GetComponent<AudioSource>();
+                playerAudio.PlayOneShot(itemAudio.clip);
                 StartCoroutine(ATMTransfer(speed));
                 break;
             case "trigger":
@@ -341,6 +383,7 @@ public class Moving : MonoBehaviour
         Points = 0;
         PointsField.text = Points.ToString();
         ResultField.text = Result.ToString();
+        playerAudio.PlayOneShot(PointCountSound);
         yield return new WaitForSeconds(0.5f);
         MoneyCount *= multiply;
         MoneyCountField.text = MoneyCount.ToString();
@@ -350,12 +393,14 @@ public class Moving : MonoBehaviour
         ResultField.text = Result.ToString();
         MoneyCount = 0;
         ResultField.text = Result.ToString();
+        playerAudio.PlayOneShot(MoneyAdd);
         yield return new WaitForSeconds(1f);
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         rest.gameObject.SetActive(true);
         exit.gameObject.SetActive(true);
         MainMenu.gameObject.SetActive(true);
+        playerAudio.PlayOneShot(RoundEndSound);
     }
     public void Death()
     {
