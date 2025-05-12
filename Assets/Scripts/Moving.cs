@@ -59,6 +59,9 @@ public class Moving : MonoBehaviour
     public AudioClip PointCountSound;
     public AudioClip MoneyAdd;
     public AudioClip RoundEndSound;
+    public Animator animator;
+    //float rotationDirection;
+    //public float rotationSpeed = 100f;
     void Start()
     {
         CreditcardMoney = 50;
@@ -115,18 +118,28 @@ public class Moving : MonoBehaviour
             }
             transform.position -= new Vector3(speed * Time.deltaTime, 0, 0);
             delta = 0;
+            if (!Application.isMobilePlatform)
+            {
+                ChangeAngle(zeroRotation);
+            }
+            //rotationDirection = 0;
             if (Input.GetKey(KeyCode.A))
             {
-
                 delta = -speed * Time.deltaTime;
-
+                ChangeAngle(leftRotation);
+                //rotationDirection = -1f;
             }
             if (Input.GetKey(KeyCode.D))
             {
                 delta = speed * Time.deltaTime;
-
+                ChangeAngle(rightRotation);
+                //rotationDirection = 1f;
             }
             transform.position = new Vector3(transform.position.x, transform.position.y, Mathf.Clamp(transform.position.z + delta, -1.8f, 1.8f));
+            //if (rotationDirection != 0f)
+            //{
+            //    Dollar.transform.Rotate(Vector3.up, rotationDirection * rotationSpeed * Time.deltaTime, Space.Self);
+            //}
             MoneyCountField.text = MoneyCount.ToString();
             PointsField.text = Points.ToString();
             MultiField.text = multiply.ToString();
@@ -239,7 +252,7 @@ public class Moving : MonoBehaviour
             case "Protection":
                 itemAudio = other.GetComponent<AudioSource>();
                 playerAudio.PlayOneShot(itemAudio.clip);
-                other.gameObject.SetActive(false);
+                other.gameObject.SetActive(false);  
                 isShield = true;
                 ShitImg.gameObject.SetActive(true);
                 break;
@@ -646,5 +659,14 @@ public class Moving : MonoBehaviour
             yield return new WaitForSeconds(1f);
             speed += 1;
         }
+    }
+
+    public Quaternion zeroRotation;
+    public Quaternion leftRotation;
+    public Quaternion rightRotation;
+    public float lerpRotation = 0.5f;
+    public void ChangeAngle(Quaternion angle)
+    {
+        Dollar.transform.localRotation = Quaternion.Lerp(Dollar.transform.localRotation, angle, lerpRotation);
     }
 }

@@ -4,7 +4,7 @@ public class MobilePlayerController : MonoBehaviour
 {
     public float speed = 3f;
     public float limit = 1.8f;
-
+    public Moving rotation;
     private float screenMiddle;
 
     void Start()
@@ -20,7 +20,7 @@ public class MobilePlayerController : MonoBehaviour
     void Update()
     {
         float delta = 0f;
-
+        rotation.ChangeAngle(rotation.zeroRotation);
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
@@ -30,10 +30,12 @@ public class MobilePlayerController : MonoBehaviour
             if (touch.position.x < screenMiddle)
             {
                 direction = -1f;
+                rotation.ChangeAngle(rotation.leftRotation);
             }
             else
             {
                 direction = 1f;
+                rotation.ChangeAngle(rotation.rightRotation);
             }
 
             delta = direction * speed * Time.deltaTime;
