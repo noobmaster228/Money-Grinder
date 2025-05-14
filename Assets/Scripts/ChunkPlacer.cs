@@ -17,16 +17,8 @@ public class ChunkPlacer : MonoBehaviour
         nextDifficultyThreshold = -75;
         SpawnChunk();
         SpawnChunk();
-        SpawnChunk();
+        SpawnChunk();   
         
-    }
-
-    void Update()
-    {
-        /*if (Player.position.x <= spawnedChunks[spawnedChunks.Count - 1].transform.position.x + 70f)
-        {
-            SpawnChunk();
-        }*/
     }
     public void SpawnChunk()
     {
@@ -49,7 +41,6 @@ public class ChunkPlacer : MonoBehaviour
 
         }
     }
-
     Chunk GetRandomChunk()
     {
         // Собираем все чанки, подходящие по сложности
@@ -120,6 +111,4 @@ public class ChunkPlacer : MonoBehaviour
             }
         }
     }
-
-
 }

@@ -97,9 +97,9 @@ GameObject:
   - component: {fileID: 5787012262146002513}
   - component: {fileID: 6925492198081800614}
   - component: {fileID: 3874030297561000616}
-  - component: {fileID: 5574738601311372243}
   - component: {fileID: 1796041488338973778}
   - component: {fileID: 4802520189923237025}
+  - component: {fileID: 8834925289880155678}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -115,7 +115,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 248079397904145693}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.369, z: 0}
   m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -186,8 +186,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 2.9469132, z: 1}
+  m_Center: {x: 0, y: -0.9734545, z: 0}
 --- !u!54 &6925492198081800614
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -216,40 +216,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6dbf2786a5e74b4eaefa9b74fe3e09d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneNum: 0
+  isTimerOn: 0
+  isShield: 0
   multiply: 0.5
-  speed: 4
   moneybagValue: 10
   badMoneybagValue: 20
   moneyValue: 1
   badMoneyValue: 2
-  startPos: {x: 47.88, y: 0.2505, z: 0}
-  endPos: {x: -160.577, y: 0.2505, z: 0}
-  Button: {fileID: 0}
-  MultiField: {fileID: 0}
-  Dollar: {fileID: 7840221053054185744}
-  ShitImg: {fileID: 0}
-  cont: {fileID: 0}
-  cont2: {fileID: 0}
-  rest: {fileID: 0}
-  exit: {fileID: 0}
-  pausemenu: {fileID: 0}
-  goodjob: {fileID: 0}
-  wip: {fileID: 0}
-  MainMenu: {fileID: 0}
-  GameOver: {fileID: 0}
-  PauseButton: {fileID: 0}
-  CreditcardField: {fileID: 0}
+  startPos: {x: 47.88, y: 0.369, z: 0}
+  endPos: {x: -160.577, y: 0.369, z: 0}
   MoneyCount: 0
-  MoneyCountField: {fileID: 0}
-  PointsField: {fileID: 0}
   Points: 0
   PointsRate: 200
-  Result: 0
-  ResultField: {fileID: 0}
-  res: {fileID: 0}
-  cam: {fileID: 3851925423105141842}
-  CreditcardMoney: 0
+  CreditcardMoney: 50
   CreditcardCount: 0
   triggerActivator: {fileID: 0}
   waterSpeed: {fileID: 0}
@@ -260,31 +239,8 @@ MonoBehaviour:
   PointCountSound: {fileID: 8300000, guid: d585b7db59bdd194a82e73bfa80ae49c, type: 3}
   MoneyAdd: {fileID: 8300000, guid: 33cc549670acc9c4780ceac4fc1a7538, type: 3}
   RoundEndSound: {fileID: 8300000, guid: f7e7ed49c07c2b945a6903970d7124a8, type: 3}
-  animator: {fileID: 3262755138254683870}
-  badMoneyRend: []
-  goodMat: {fileID: 2100000, guid: 369b1588f9543304195fd15316367ba2, type: 2}
-  badMat: {fileID: 2100000, guid: 41740346d3d84f34a82621f07fb1cbba, type: 2}
-  badBagMat: {fileID: 0}
-  colourSlider: {fileID: 0}
-  zeroRotation: {x: 0, y: 0, z: 0, w: 0}
-  leftRotation: {x: 0, y: 0, z: 0, w: 0}
-  rightRotation: {x: 0, y: 0, z: 0, w: 0}
-  lerpRotation: 0.5
---- !u!114 &5574738601311372243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 248079397904145693}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a069093375bb87245991c0f2a5fb74c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 4
-  limit: 1.8
-  rotation: {fileID: 3874030297561000616}
+  UI: {fileID: 0}
+  playerMovement: {fileID: 8834925289880155678}
 --- !u!82 &1796041488338973778
 AudioSource:
   m_ObjectHideFlags: 0
@@ -411,6 +367,26 @@ MonoBehaviour:
   - tag: -Multi
     clip: {fileID: 8300000, guid: dc099d6d4e2ea1b46a41fae30f33921a, type: 3}
   audioSource: {fileID: 1796041488338973778}
+--- !u!114 &8834925289880155678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 248079397904145693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bc91fe623577ec478423d2df0c6dc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement: {fileID: 3874030297561000616}
+  UI: {fileID: 0}
+  zeroRotation: {x: 0, y: 0.70710677, z: 0, w: -0.70710677}
+  leftRotation: {x: 0, y: 0.9396926, z: 0, w: -0.34202012}
+  rightRotation: {x: 0, y: 0.3420202, z: 0, w: -0.9396926}
+  lerpRotation: 0.3
+  speed: 4
+  limit: 1.8
 --- !u!1 &879751849279001126
 GameObject:
   m_ObjectHideFlags: 0
@@ -710,7 +686,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3851925423105141842}
-  m_LocalRotation: {x: 0.19205777, y: -0.6805247, z: 0.19205779, w: 0.6805247}
+  m_LocalRotation: {x: 0.14097439, y: -0.69291145, z: 0.14097439, w: 0.69291145}
   m_LocalPosition: {x: 7.66, y: 3.62, z: -0}
   m_LocalScale: {x: 2, y: 1.4276848, z: 20.607647}
   m_ConstrainProportionsScale: 0
