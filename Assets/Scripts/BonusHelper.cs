@@ -2,20 +2,17 @@ using System.Collections.Generic;
 
 public static class BonusHelper
 {
-    static List<string> positiveTags = new List<string> { "+Speed", "+Money", "+Points", "+Multi" };
-    static List<string> negativeTags = new List<string> { "-Speed", "-Money", "-Points", "-Multi" };
-
-    public static string GetRandomPositiveBonusTag()
+    static List<string> positiveTags = new List<string> { "+Speed", "+Money", "+Points", "+Multi" }; //список положительных тегов
+    static List<string> negativeTags = new List<string> { "-Speed", "-Money", "-Points", "-Multi" }; //список отрицательных тегов
+    public static string GetRandomPositiveBonusTag() //установка случайного позитивного тега
     {
         return positiveTags[UnityEngine.Random.Range(0, positiveTags.Count)];
     }
-
-    public static string GetRandomNegativeBonusTag()
+    public static string GetRandomNegativeBonusTag() //установка случайного отрицательного тега
     {
         return negativeTags[UnityEngine.Random.Range(0, negativeTags.Count)];
     }
-
-    public static string GetTextFromTag(string tag)
+    public static string GetTextFromTag(string tag) //установка текста в зависимости от тега
     {
         switch (tag)
         {
@@ -31,4 +28,3 @@ public static class BonusHelper
         }
     }
 }
-

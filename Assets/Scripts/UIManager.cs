@@ -9,7 +9,7 @@ public class UIManager : MonoBehaviour
     bool isPause;
     [SerializeField] GameObject Button;
     [SerializeField] Text MultiField;
-    public GameObject Dollar;
+    [SerializeField] GameObject PlayerModel;
     public GameObject ShitImg;
     [SerializeField] GameObject cont;
     [SerializeField] GameObject cont2;
@@ -34,7 +34,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] Slider colourSlider;
     public GameObject cam;
     public GameController moving;
-    public PlayerControls controls;
     bool Pause2Check;
     void Start()
     {
@@ -43,8 +42,8 @@ public class UIManager : MonoBehaviour
         Result = 0;
         Pause2Check = false;
     }
-    void Update()
-    {
+        void Update()
+        {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPause)
@@ -184,7 +183,6 @@ public class UIManager : MonoBehaviour
         PauseButton.SetActive(true);
         moving.isTimerOn = true;
         Button.SetActive(false);
-        StartCoroutine(controls.StartAcceleration(controls.speed));
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -271,28 +269,19 @@ public class UIManager : MonoBehaviour
     }
     public IEnumerator ShieldBreak()//анимация Пролом щита
     {
-        Dollar.gameObject.SetActive(false);
+        for (int i=0; i<3; i++)
+        {
+            PlayerModel.gameObject.SetActive(false);
+            ShitImg.gameObject.SetActive(false);
+            yield return new WaitForSeconds(0.1f);
+            PlayerModel.gameObject.SetActive(true);
+            ShitImg.gameObject.SetActive(true);
+            yield return new WaitForSeconds(0.5f);
+        }
+        PlayerModel.gameObject.SetActive(false);
         ShitImg.gameObject.SetActive(false);
         yield return new WaitForSeconds(0.1f);
-        Dollar.gameObject.SetActive(true);
-        ShitImg.gameObject.SetActive(true);
-        yield return new WaitForSeconds(0.5f);
-        Dollar.gameObject.SetActive(false);
-        ShitImg.gameObject.SetActive(false);
-        yield return new WaitForSeconds(0.1f);
-        Dollar.gameObject.SetActive(true);
-        ShitImg.gameObject.SetActive(true);
-        yield return new WaitForSeconds(0.5f);
-        Dollar.gameObject.SetActive(false);
-        ShitImg.gameObject.SetActive(false);
-        yield return new WaitForSeconds(0.1f);
-        Dollar.gameObject.SetActive(true);
-        ShitImg.gameObject.SetActive(true);
-        yield return new WaitForSeconds(0.5f);
-        Dollar.gameObject.SetActive(false);
-        ShitImg.gameObject.SetActive(false);
-        yield return new WaitForSeconds(0.1f);
-        Dollar.gameObject.SetActive(true);
+        PlayerModel.gameObject.SetActive(true);
         moving.isShield = false;
     }
     public IEnumerator NoColor()//Отключение цвета
@@ -304,9 +293,7 @@ public class UIManager : MonoBehaviour
                 Debug.Log(item.material + " " + badBagMat);
                 if (item.material.name.Substring(6, 3) != badBagMat.name.Substring(6, 3))
                 { item.material = goodMat; }
-
             }
-            //  badMoneyRend[i].GetComponentInChildren<MeshRenderer>().material = goodMat;
         }
         cam.GetComponent<Grayscale>().enabled = true;
         colourSlider.gameObject.SetActive(true);

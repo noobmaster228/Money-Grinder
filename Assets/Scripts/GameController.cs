@@ -3,37 +3,37 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    float t; 
-    public bool isTimerOn; 
-    public bool isShield;
-    public float multiply;
-    [SerializeField] float moneybagValue;
-    [SerializeField] float badMoneybagValue;
-    [SerializeField] float moneyValue;
-    [SerializeField] float badMoneyValue;
-    [SerializeField] Vector3 startPos;
-    public Vector3 endPos;
-    public float MoneyCount;
-    public float Points;
-    public float PointsRate;
-    [SerializeField] float CreditcardMoney;
-    public float CreditcardCount;
-    [SerializeField] ChunkPlacer triggerActivator;
-    [SerializeField] WaterScroller waterSpeed;
-    public Rigidbody falling;
-    AudioSource itemAudio;
-    public AudioSource playerAudio;
-    [SerializeField] BonusSoundPlayer BonusSounds;
-    [SerializeField] AudioClip ShieldBreakSound;
-    public AudioClip PointCountSound;
-    public AudioClip MoneyAdd;
-    public AudioClip RoundEndSound;
-    [SerializeField] UIManager UI;
-    [SerializeField] PlayerControls playerMovement;
+    float TimeCycle; //Переменная для подсчёта очков
+    public bool isTimerOn; //проверка запуска таймера игры
+    public bool isShield; //проверка наличия щита
+    public float multiply; //значение мультипликатора
+    [SerializeField] float moneybagValue; //значение 1 банкноты
+    [SerializeField] float badMoneybagValue; //значение плохой банкноты
+    [SerializeField] float moneyValue; //значение мешка с деньгами
+    [SerializeField] float badMoneyValue; //значение плохого мешка с деньгами
+    [SerializeField] Vector3 startPos; //Позиция откуда игрок начинает уровень
+    public Vector3 endPos; //Позиция для концовки игры
+    public float MoneyCount; //баланс игрока
+    public float Points; //кол-во очков игрока
+    public float PointsRate; //кол-во очков в полсекунды
+    [SerializeField] float CreditcardMoney; //кол-во денег подобранных с кредитной карты
+    public float CreditcardCount; //баланс игрока в кредитных карточках
+    [SerializeField] ChunkPlacer triggerActivator; //скрипт процедурной генерации 
+    [SerializeField] WaterScroller waterSpeed; //скрипт для движения текстуры воды
+    public Rigidbody falling; //управление компонентом Rigidbody
+    AudioSource itemAudio; //источник звука предмета
+    public AudioSource playerAudio; //источник звука игрока
+    [SerializeField] BonusSoundPlayer BonusSounds; //скрипт управляющий звуком бонусов
+    [SerializeField] AudioClip ShieldBreakSound; //аудиоклип лома щита
+    public AudioClip PointCountSound; //аудиоклип финального подсчёта очков
+    public AudioClip MoneyAdd; //аудиоклип перевода баланса игрока
+    public AudioClip RoundEndSound; //аудиоклип конца игры
+    [SerializeField] UIManager UI; //управления UI игры
+    [SerializeField] PlayerControls playerMovement; //скрипт управления игрока
     void Start()
     {
         multiply = 1;
-        t = 0;
+        TimeCycle = 0;
         isTimerOn = false;
         transform.position = startPos;
         MoneyCount = 0;
@@ -41,20 +41,20 @@ public class GameController : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         isShield = false;
     }
-    void FixedUpdate() //Добавление очков каждые 0.5 секунды и считывание конца обучающих уровней
+    void Update() //Добавление очков каждые 0.5 секунды и считывание конца обучающих уровней
     {
         if (isTimerOn)
         {
-            t += Time.deltaTime;
-            if (t >= 0.5f)
+            TimeCycle += Time.deltaTime;
+            if (TimeCycle >= 0.5f)
             {
                 Points += PointsRate;
-                t = 0;
+                TimeCycle = 0;
             }
         }
         if ((transform.position.x <= endPos.x) && (isTimerOn) && (UI.SceneNum != 9))
         {
-            t = 0;
+            TimeCycle = 0;
             isTimerOn = false;
             StartCoroutine(UI.ResultCount());
         }
@@ -120,7 +120,6 @@ public class GameController : MonoBehaviour
                 break;
             case "SAW":
                 itemAudio = other.GetComponent<AudioSource>();
-                playerMovement.limit = 200;
                 other.tag = "Untagged";
                 if (isShield)
                 {
@@ -131,6 +130,7 @@ public class GameController : MonoBehaviour
                 {
                     playerAudio.PlayOneShot(itemAudio.clip);
                     UI.Death();
+                    playerMovement.limit = 200;
                 }
                 break;
             case "DeathPit":

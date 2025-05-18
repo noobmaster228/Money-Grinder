@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Grayscale : MonoBehaviour
@@ -8,10 +6,9 @@ public class Grayscale : MonoBehaviour
     public Shader grShader;
     void Start()
     {
-        material = new Material(grShader);
+        material = new Material(grShader); //создаётся новый шейдер
     }
-
-    private void OnRenderImage(RenderTexture source, RenderTexture destination)
+    private void OnRenderImage(RenderTexture source, RenderTexture destination) //преобразовывает изображение с использованием материала с шейдером
     {
         Graphics.Blit(source, destination, material);
     }

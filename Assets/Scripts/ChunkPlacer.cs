@@ -3,45 +3,41 @@ using UnityEngine;
 
 public class ChunkPlacer : MonoBehaviour
 {
-    public Transform Player;
-    public Chunk[] ChunkPrefabs;
-    public Chunk FirstChunk;
-    Vector3 offset = new Vector3(25, 0, 0);
-    public int currentDifficulty;
-    public int nextDifficultyThreshold;
-    public List<Chunk> spawnedChunks = new List<Chunk>();
+    public Transform Player; //положение игрока
+    public Chunk[] ChunkPrefabs; //префабы заранее придуманых чанков
+    public Chunk FirstChunk; //Первый чанк с которого игрок начинает игру
+    Vector3 offset = new Vector3(25, 0, 0); //расстояние через которое спавнится след чанк
+    public int currentDifficulty; //сложность на данный момент уровня
+    public int nextDifficultyThreshold; //координата Х следующего повышения сложности
+    public List<Chunk> spawnedChunks = new List<Chunk>(); //Список заспавленных чанков
     void Start()
     {
-        spawnedChunks.Add(FirstChunk);
-        currentDifficulty = 1;
-        nextDifficultyThreshold = -75;
-        SpawnChunk();
-        SpawnChunk();
-        SpawnChunk();   
+        spawnedChunks.Add(FirstChunk); //добавляем первый чанк в список заспавленных чанков
+        currentDifficulty = 1; //текущая сложность установлена на 1
+        nextDifficultyThreshold = -75; //повышение сложности по координате Х=75
+        SpawnChunk(); //Спавним три чанка с начала уровня, 
+        SpawnChunk(); //чтобы перед игроком был уровень 
+        SpawnChunk(); //и он не видел генерацию игры
         
     }
-    public void SpawnChunk()
+    public void SpawnChunk() //спавним чанк
     {
         Chunk newChunk = Instantiate(GetRandomChunk());
         newChunk.transform.position = spawnedChunks[spawnedChunks.Count - 1].transform.position - offset;
         AssignBonusesToChunk(newChunk);
         spawnedChunks.Add(newChunk);
-        if (spawnedChunks[0].transform.position.x - Player.position.x > 25f)
+        if (spawnedChunks[0].transform.position.x - Player.position.x > 25f) //если игрок удалился от первого чана в списке, то удалить самый старый
         {
             Destroy(spawnedChunks[0].gameObject);
             spawnedChunks.RemoveAt(0);
         }
-        if ((Player.position.x <= nextDifficultyThreshold) && (currentDifficulty < 8))
+        if ((Player.position.x <= nextDifficultyThreshold) && (currentDifficulty < 8)) //повысить сложность и следующую контрольную точку
         {
             currentDifficulty += 1;
             nextDifficultyThreshold -= 125;
         }
-        else
-        {
-
-        }
     }
-    Chunk GetRandomChunk()
+    Chunk GetRandomChunk() //Получение случайного чанка в зависимости от сложности
     {
         // Собираем все чанки, подходящие по сложности
         List<Chunk> suitableChunks = new List<Chunk>();
@@ -56,7 +52,7 @@ public class ChunkPlacer : MonoBehaviour
         // Возвращаем случайный из подходящих
         return suitableChunks[Random.Range(0, suitableChunks.Count)];
     }
-    void AssignBonusesToChunk(Chunk chunk)
+    void AssignBonusesToChunk(Chunk chunk) 
     {
         // 4 и 8 — вообще нет стен, пропускаем
         if (chunk.wallnum == 4 || chunk.wallnum == 8)
@@ -80,7 +76,7 @@ public class ChunkPlacer : MonoBehaviour
             }
         }
 
-        // Обработка стены WalkingBonus (только одна сторона)
+        // Обработка стены WalkingBonus
         else if (chunk.wallnum == 6 || chunk.wallnum == 7)
         {
             Transform walkingBonus = chunk.transform.Find("WalkingBonus");
@@ -93,11 +89,11 @@ public class ChunkPlacer : MonoBehaviour
             SetWallBonus(left, isPositive);
         }
     }
-    void SetWallBonus(Transform wall, bool isPositive)
+    void SetWallBonus(Transform wall, bool isPositive) 
     {
         if (wall == null) return;
 
-        string tag = isPositive ? BonusHelper.GetRandomPositiveBonusTag() : BonusHelper.GetRandomNegativeBonusTag();
+        string tag = isPositive ? BonusHelper.GetRandomPositiveBonusTag() : BonusHelper.GetRandomNegativeBonusTag(); //устанавливается тег в зависимости от его цвета
         wall.tag = tag;
 
         // Обновляем текст на ребёнке
@@ -107,7 +103,7 @@ public class ChunkPlacer : MonoBehaviour
             var tmp = textObj.GetComponent<TMPro.TextMeshPro>();
             if (tmp != null)
             {
-                tmp.text = BonusHelper.GetTextFromTag(tag);
+                tmp.text = BonusHelper.GetTextFromTag(tag); //на стенку вставляется текст соответствующий установленому тегу
             }
         }
     }

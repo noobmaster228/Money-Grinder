@@ -10744,7 +10744,7 @@ MonoBehaviour:
   SceneNum: 3
   Button: {fileID: 1602127644}
   MultiField: {fileID: 0}
-  Dollar: {fileID: 2114963136}
+  PlayerModel: {fileID: 2114963136}
   ShitImg: {fileID: 0}
   cont: {fileID: 1429543710}
   cont2: {fileID: 729857936}
@@ -10768,7 +10768,6 @@ MonoBehaviour:
   colourSlider: {fileID: 0}
   cam: {fileID: 2114963135}
   moving: {fileID: 2114963134}
-  controls: {fileID: 2114963133}
 --- !u!4 &1688931844
 Transform:
   m_ObjectHideFlags: 0
@@ -13687,17 +13686,6 @@ PrefabInstance:
       objectReference: {fileID: 1688931843}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c31043a558cdd1b4591270a19adc2ea8, type: 3}
---- !u!114 &2114963133 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8834925289880155678, guid: c31043a558cdd1b4591270a19adc2ea8, type: 3}
-  m_PrefabInstance: {fileID: 2114963132}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bc91fe623577ec478423d2df0c6dc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2114963134 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3874030297561000616, guid: c31043a558cdd1b4591270a19adc2ea8, type: 3}

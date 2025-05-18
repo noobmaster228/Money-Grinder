@@ -43,8 +43,8 @@ GameObject:
   - component: {fileID: 7055309507138624406}
   - component: {fileID: 2067847269287207328}
   - component: {fileID: 5732784675339623769}
-  - component: {fileID: 8384390192431707076}
   - component: {fileID: 2560072714455517062}
+  - component: {fileID: 6485859100591289991}
   m_Layer: 0
   m_Name: ATM
   m_TagString: ATM
@@ -117,20 +117,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8384390192431707076
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6319156405919672709}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -1334353993652321953, guid: 3d55057796203024ca0deaad7fd6a70c, type: 3}
 --- !u!82 &2560072714455517062
 AudioSource:
   m_ObjectHideFlags: 0
@@ -227,3 +213,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &6485859100591289991
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6319156405919672709}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2511366, y: 0.28923506, z: 0.36750907}
+  m_Center: {x: 0, y: -0.018479496, z: 0.18375453}

@@ -1,16 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Chaser : MonoBehaviour
 {
     public Transform player;
     public Vector3 targetPosition;
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         targetPosition = player.position;

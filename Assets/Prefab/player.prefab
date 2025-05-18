@@ -380,7 +380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {fileID: 3874030297561000616}
-  UI: {fileID: 0}
+  PlayerModel: {fileID: 7840221053054185744}
   zeroRotation: {x: 0, y: 0.70710677, z: 0, w: -0.70710677}
   leftRotation: {x: 0, y: 0.9396926, z: 0, w: -0.34202012}
   rightRotation: {x: 0, y: 0.3420202, z: 0, w: -0.9396926}
@@ -672,6 +672,7 @@ GameObject:
   - component: {fileID: 5854649839830506379}
   - component: {fileID: 2294566625946489118}
   - component: {fileID: 4843689886655106278}
+  - component: {fileID: 7223075452882764036}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -758,6 +759,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grShader: {fileID: 4800000, guid: 5cc21dfb71fd06140b5ffbcbf5b38000, type: 3}
+--- !u!114 &7223075452882764036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3851925423105141842}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: b89facc67d01b094d87f68c2bd70cb91, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
 --- !u!1 &6398759243417540231
 GameObject:
   m_ObjectHideFlags: 0

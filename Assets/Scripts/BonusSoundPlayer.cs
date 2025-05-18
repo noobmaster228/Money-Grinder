@@ -9,11 +9,9 @@ public class BonusSoundPlayer : MonoBehaviour
         public string tag;
         public AudioClip clip;
     }
-
     public List<BonusSound> bonusSounds;
     public Dictionary<string, AudioClip> soundMap;
     public AudioSource audioSource;
-
     void Awake()
     {
         soundMap = new Dictionary<string, AudioClip>();
@@ -27,7 +25,6 @@ public class BonusSoundPlayer : MonoBehaviour
         if (audioSource == null)
             audioSource = gameObject.AddComponent<AudioSource>();
     }
-
     public void PlayBonusSound(string tag)
     {
         if (soundMap.TryGetValue(tag, out AudioClip clip))

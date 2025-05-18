@@ -7,7 +7,6 @@ public class SimpleRotation : MonoBehaviour
     public bool enableRotation;
     public float floatAmplitude = 0.5f; // амплитуда движения
     public float floatFrequency = 1f;   // частота (кол-во колебаний в секунду)
-
     private Vector3 startPos;
 
     void Start()
