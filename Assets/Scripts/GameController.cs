@@ -24,7 +24,7 @@ public class GameController : MonoBehaviour
     AudioSource itemAudio; //источник звука предмета
     public AudioSource playerAudio; //источник звука игрока
     [SerializeField] BonusSoundPlayer BonusSounds; //скрипт управляющий звуком бонусов
-    [SerializeField] AudioClip ShieldBreakSound; //аудиоклип лома щита
+    [SerializeField] AudioClip ShieldBreakSound; //аудиоклип лома щита  
     public AudioClip PointCountSound; //аудиоклип финального подсчёта очков
     public AudioClip MoneyAdd; //аудиоклип перевода баланса игрока
     public AudioClip RoundEndSound; //аудиоклип конца игры

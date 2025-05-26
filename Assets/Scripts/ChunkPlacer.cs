@@ -13,29 +13,29 @@ public class ChunkPlacer : MonoBehaviour
     void Start()
     {
         spawnedChunks.Add(FirstChunk); //добавляем первый чанк в список заспавленных чанков
-        currentDifficulty = 1; //текущая сложность установлена на 1
+        //currentDifficulty = 1; //текущая сложность установлена на 1
         nextDifficultyThreshold = -75; //повышение сложности по координате Х=75
-        SpawnChunk(); //Спавним три чанка с начала уровня, 
-        SpawnChunk(); //чтобы перед игроком был уровень 
-        SpawnChunk(); //и он не видел генерацию игры
+        //SpawnChunk(); //Спавним три чанка с начала уровня, 
+        //SpawnChunk(); //чтобы перед игроком был уровень 
+        //SpawnChunk(); //и он не видел генерацию игры
         
     }
     public void SpawnChunk() //спавним чанк
     {
         Chunk newChunk = Instantiate(GetRandomChunk());
         newChunk.transform.position = spawnedChunks[spawnedChunks.Count - 1].transform.position - offset;
-        AssignBonusesToChunk(newChunk);
+        AssignBonusesToChunk(newChunk); 
         spawnedChunks.Add(newChunk);
         if (spawnedChunks[0].transform.position.x - Player.position.x > 25f) //если игрок удалился от первого чана в списке, то удалить самый старый
         {
             Destroy(spawnedChunks[0].gameObject);
             spawnedChunks.RemoveAt(0);
-        }
+        }//если игрок удалился от первого чана в списке, то удалить самый старый
         if ((Player.position.x <= nextDifficultyThreshold) && (currentDifficulty < 8)) //повысить сложность и следующую контрольную точку
         {
             currentDifficulty += 1;
             nextDifficultyThreshold -= 125;
-        }
+        }//повысить сложность и следующую контрольную точку
     }
     Chunk GetRandomChunk() //Получение случайного чанка в зависимости от сложности
     {
@@ -107,4 +107,4 @@ public class ChunkPlacer : MonoBehaviour
             }
         }
     }
-}
+}   

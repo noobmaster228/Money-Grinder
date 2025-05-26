@@ -42,7 +42,7 @@ public class UIManager : MonoBehaviour
         Result = 0;
         Pause2Check = false;
     }
-        void Update()
+    void Update()
         {
         if (Input.GetKeyDown(KeyCode.Escape))
         {

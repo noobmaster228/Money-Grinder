@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class BonusSoundPlayer : MonoBehaviour
 {
-    [System.Serializable]
+    [System.Serializable]   
     public class BonusSound
     {
         public string tag;
