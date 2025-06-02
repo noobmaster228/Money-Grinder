@@ -16,6 +16,7 @@ public class MainMenu : MonoBehaviour
     float Balance;
     [SerializeField] Text RecordField;
     [SerializeField] Text BalanceField;
+    [SerializeField] GameObject ShopGrid;
     private void Start()
     {
         var save = SaveManager.LoadProgress();
@@ -62,6 +63,7 @@ public class MainMenu : MonoBehaviour
         Exit.gameObject.SetActive(false);
         ShopButton.SetActive(false);
         BalanceField.gameObject.SetActive(true);
+        ShopGrid.SetActive(true);
     }
     public void Back()
     {
@@ -74,6 +76,7 @@ public class MainMenu : MonoBehaviour
         CreditsButton.gameObject.SetActive(true);
         Exit.gameObject.SetActive(true);
         BalanceField.gameObject.SetActive(false);
+        ShopGrid.SetActive(false);
     }
     public void HelpMenu()
     {

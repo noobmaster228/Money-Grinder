@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerControls : MonoBehaviour
 {
     [SerializeField] GameController movement;
-    [SerializeField] GameObject PlayerModel; //3D модель игрока
+    public GameObject PlayerModel; //3D модель игрока
     [SerializeField] Quaternion zeroRotation; //нет поворота
     [SerializeField] Quaternion leftRotation; //поворот налево
     [SerializeField] Quaternion rightRotation; //поворот направо
