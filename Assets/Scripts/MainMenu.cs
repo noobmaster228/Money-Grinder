@@ -4,14 +4,26 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    public GameObject Startgame;
-    public GameObject SelectLeveling;
-    public GameObject CreditsButton;
-    public GameObject Exit;
-    public GameObject[] CreditsText;
-    public GameObject BackButton;
-    public GameObject SelectLevelMenu;
-
+    [SerializeField] GameObject Startgame;
+    [SerializeField] GameObject SelectLeveling;
+    [SerializeField] GameObject CreditsButton;
+    [SerializeField] GameObject Exit;
+    [SerializeField] GameObject[] CreditsText;
+    [SerializeField] GameObject BackButton;
+    [SerializeField] GameObject SelectLevelMenu;
+    [SerializeField] GameObject ShopButton;
+    float Record;
+    float Balance;
+    [SerializeField] Text RecordField;
+    [SerializeField] Text BalanceField;
+    private void Start()
+    {
+        var save = SaveManager.LoadProgress();
+        Record = save.Record;
+        Balance = save.Balance;
+        RecordField.text = Record.ToString("#,0").Replace(',', '\'');
+        BalanceField.text = Balance.ToString("#,0").Replace(',', '\'');
+    }
     public void Startlevel(int levelnum)
     {
         SceneManager.LoadScene(levelnum);
@@ -26,6 +38,7 @@ public class MainMenu : MonoBehaviour
         BackButton.gameObject.SetActive(true);
         Startgame.gameObject.SetActive(false);
         SelectLeveling.gameObject.SetActive(false);
+        ShopButton.SetActive(false);
         CreditsButton.gameObject.SetActive(false);
         Exit.gameObject.SetActive(false);
     }
@@ -36,8 +49,19 @@ public class MainMenu : MonoBehaviour
         BackButton.gameObject.SetActive(true);
         Startgame.gameObject.SetActive(false);
         SelectLeveling.gameObject.SetActive(false);
+        ShopButton.SetActive(false);
         CreditsButton.gameObject.SetActive(false);
         Exit.gameObject.SetActive(false);
+    }
+    public void Shop()
+    {
+        BackButton.gameObject.SetActive(true);
+        Startgame.gameObject.SetActive(false);
+        SelectLeveling.gameObject.SetActive(false);
+        CreditsButton.gameObject.SetActive(false);
+        Exit.gameObject.SetActive(false);
+        ShopButton.SetActive(false);
+        BalanceField.gameObject.SetActive(true);
     }
     public void Back()
     {
@@ -46,14 +70,17 @@ public class MainMenu : MonoBehaviour
         BackButton.gameObject.SetActive(false);
         Startgame.gameObject.SetActive(true);
         SelectLeveling.gameObject.SetActive(true);
+        ShopButton.SetActive(true);
         CreditsButton.gameObject.SetActive(true);
         Exit.gameObject.SetActive(true);
+        BalanceField.gameObject.SetActive(false);
     }
     public void HelpMenu()
     {
         BackButton.gameObject.SetActive(true);
         Startgame.gameObject.SetActive(false);
         SelectLeveling.gameObject.SetActive(false);
+        ShopButton.SetActive(false);
         CreditsButton.gameObject.SetActive(false);
         Exit.gameObject.SetActive(false);
     }

@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Chaser : MonoBehaviour
 {
-    public Transform player;
-    public Vector3 targetPosition;
+    [SerializeField] Transform player;
+    [SerializeField] Vector3 targetPosition;
     void Update()
     {
         targetPosition = player.position;

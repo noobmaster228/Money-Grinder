@@ -3,56 +3,67 @@ using UnityEngine;
 
 public class ChunkPlacer : MonoBehaviour
 {
-    public Transform Player; //положение игрока
-    public Chunk[] ChunkPrefabs; //префабы заранее придуманых чанков
-    public Chunk FirstChunk; //Первый чанк с которого игрок начинает игру
+    [SerializeField] Transform Player; //положение игрока
+    [SerializeField] Chunk[] ChunkPrefabs; //префабы заранее придуманых чанков
+    [SerializeField] Chunk FirstChunk; //Первый чанк с которого игрок начинает игру
     Vector3 offset = new Vector3(25, 0, 0); //расстояние через которое спавнится след чанк
-    public int currentDifficulty; //сложность на данный момент уровня
-    public int nextDifficultyThreshold; //координата Х следующего повышения сложности
-    public List<Chunk> spawnedChunks = new List<Chunk>(); //Список заспавленных чанков
+    [SerializeField] int currentDifficulty; //сложность на данный момент уровня
+    [SerializeField] int nextDifficultyThreshold; //координата Х следующего повышения сложности
+    [SerializeField] int anotherDifficultyThreshold; //координата Х следующего повышения нижней планки сложности
+    [SerializeField] int underlinedifficulty; //нижняя планка сложности
+    [SerializeField] List<Chunk> spawnedChunks = new List<Chunk>(); //Список заспавленных чанков
+    [SerializeField] List<Chunk> suitableChunks = new List<Chunk>();
     void Start()
     {
         spawnedChunks.Add(FirstChunk); //добавляем первый чанк в список заспавленных чанков
-        //currentDifficulty = 1; //текущая сложность установлена на 1
+        currentDifficulty = 1; //текущая сложность установлена на 1
         nextDifficultyThreshold = -75; //повышение сложности по координате Х=75
-        //SpawnChunk(); //Спавним три чанка с начала уровня, 
-        //SpawnChunk(); //чтобы перед игроком был уровень 
-        //SpawnChunk(); //и он не видел генерацию игры
-        
+        anotherDifficultyThreshold = -325;
+        underlinedifficulty = 0;
+        DifficultyChange();
+        SpawnChunk(); //Спавним три чанка с начала уровня, 
+        SpawnChunk(); //чтобы перед игроком был уровень 
+        SpawnChunk(); //и он не видел генерацию игры
+
     }
     public void SpawnChunk() //спавним чанк
     {
-        Chunk newChunk = Instantiate(GetRandomChunk());
+        Chunk newChunk = Instantiate(suitableChunks[Random.Range(0, suitableChunks.Count)]);
         newChunk.transform.position = spawnedChunks[spawnedChunks.Count - 1].transform.position - offset;
-        AssignBonusesToChunk(newChunk); 
+        AssignBonusesToChunk(newChunk);
         spawnedChunks.Add(newChunk);
         if (spawnedChunks[0].transform.position.x - Player.position.x > 25f) //если игрок удалился от первого чана в списке, то удалить самый старый
         {
             Destroy(spawnedChunks[0].gameObject);
             spawnedChunks.RemoveAt(0);
-        }//если игрок удалился от первого чана в списке, то удалить самый старый
+        }
         if ((Player.position.x <= nextDifficultyThreshold) && (currentDifficulty < 8)) //повысить сложность и следующую контрольную точку
         {
             currentDifficulty += 1;
             nextDifficultyThreshold -= 125;
-        }//повысить сложность и следующую контрольную точку
+            DifficultyChange();
+        }
+        if ((Player.position.x <= anotherDifficultyThreshold) && (underlinedifficulty < 4)) //поднимает низкую планку сложности
+        {
+            underlinedifficulty += 1;
+            anotherDifficultyThreshold -= 125;
+        } 
     }
-    Chunk GetRandomChunk() //Получение случайного чанка в зависимости от сложности
+    void DifficultyChange()
     {
-        // Собираем все чанки, подходящие по сложности
-        List<Chunk> suitableChunks = new List<Chunk>();
-
         foreach (Chunk chunk in ChunkPrefabs)
         {
-            if (chunk.difficulty <= currentDifficulty)
+            if (chunk.difficulty == currentDifficulty)
             {
                 suitableChunks.Add(chunk);
             }
+            if ((chunk.difficulty == underlinedifficulty) && (underlinedifficulty != 0))
+            {
+                suitableChunks.Remove(chunk);
+            }
         }
-        // Возвращаем случайный из подходящих
-        return suitableChunks[Random.Range(0, suitableChunks.Count)];
     }
-    void AssignBonusesToChunk(Chunk chunk) 
+    void AssignBonusesToChunk(Chunk chunk)
     {
         // 4 и 8 — вообще нет стен, пропускаем
         if (chunk.wallnum == 4 || chunk.wallnum == 8)
@@ -89,7 +100,7 @@ public class ChunkPlacer : MonoBehaviour
             SetWallBonus(left, isPositive);
         }
     }
-    void SetWallBonus(Transform wall, bool isPositive) 
+    void SetWallBonus(Transform wall, bool isPositive)
     {
         if (wall == null) return;
 
@@ -107,4 +118,4 @@ public class ChunkPlacer : MonoBehaviour
             }
         }
     }
-}   
+}

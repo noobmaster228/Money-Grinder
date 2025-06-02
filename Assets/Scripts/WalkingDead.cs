@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class WalkingDead : MonoBehaviour
 {
-    public GameObject[] waypoints;
-    public int num;
-    public float minDist;
-    public float speed;
+    [SerializeField] GameObject[] waypoints;
+    [SerializeField] int num;
+    [SerializeField] float minDist;
+    [SerializeField] float speed;
 
     private void Start()
     {
