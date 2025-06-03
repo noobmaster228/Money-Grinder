@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Cauldron Skin
   m_EditorClassIdentifier: 
   skinId: 0
-  skinName: Cauldron
+  skinName: "\u041A\u043E\u0442\u0451\u043B"
   price: 0
   icon: {fileID: 21300000, guid: af6f4c439799aa049be2b5fbbe0a10a2, type: 3}
   skinPrefab: {fileID: 6486245807346765849, guid: fa7edc79fefe100408ffaeb84c5471e2, type: 3}

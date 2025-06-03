@@ -17,12 +17,13 @@ public class MainMenu : MonoBehaviour
     [SerializeField] Text RecordField;
     [SerializeField] Text BalanceField;
     [SerializeField] GameObject ShopGrid;
+    [SerializeField] SkinShopUI resetShop;
     private void Start()
     {
         var save = SaveManager.LoadProgress();
         Record = save.Record;
         Balance = save.Balance;
-        RecordField.text = Record.ToString("#,0").Replace(',', '\'');
+        RecordField.text = "Рекорд: " + Record.ToString("#,0").Replace(',', '\'');
         BalanceField.text = Balance.ToString("#,0").Replace(',', '\'');
     }
     public void Startlevel(int levelnum)
@@ -53,6 +54,7 @@ public class MainMenu : MonoBehaviour
         ShopButton.SetActive(false);
         CreditsButton.gameObject.SetActive(false);
         Exit.gameObject.SetActive(false);
+        RecordField.gameObject.SetActive(true);
     }
     public void Shop()
     {
@@ -77,6 +79,7 @@ public class MainMenu : MonoBehaviour
         Exit.gameObject.SetActive(true);
         BalanceField.gameObject.SetActive(false);
         ShopGrid.SetActive(false);
+        RecordField.gameObject.SetActive(false);
     }
     public void HelpMenu()
     {
@@ -87,4 +90,15 @@ public class MainMenu : MonoBehaviour
         CreditsButton.gameObject.SetActive(false);
         Exit.gameObject.SetActive(false);
     }
+    public void ResetProgress()
+    {
+        SaveManager.ResetAllProgress();
+        var save = SaveManager.LoadProgress();
+
+        RecordField.text = "Рекорд: "+save.Record.ToString("#,0").Replace(',', '\'');
+        BalanceField.text = save.Balance.ToString("#,0").Replace(',', '\'');
+
+        resetShop.ResetShop();
+    }
+
 }

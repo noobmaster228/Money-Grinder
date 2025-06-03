@@ -45,7 +45,35 @@ public static class SaveManager
     public static SaveData LoadProgress()
     {
         if (PlayerPrefs.HasKey(SaveKey))
-            return JsonUtility.FromJson<SaveData>(PlayerPrefs.GetString(SaveKey));
-        return new SaveData();
+        {
+            var data = JsonUtility.FromJson<SaveData>(PlayerPrefs.GetString(SaveKey));
+
+            // safety check: вдруг список пуст (обновление старого сейва)
+            if (data.PurchasedSkins == null || data.PurchasedSkins.Length == 0)
+            {
+                data.PurchasedSkins = new string[] { "0" };
+                data.ActiveSkinId = "0";
+                PlayerPrefs.SetString(SaveKey, JsonUtility.ToJson(data));
+                PlayerPrefs.Save();
+            }
+            return data;
+        }
+
+        // ѕервый запуск Ч выдаЄм первый скин
+        var newData = new SaveData
+        {
+            Record = 0,
+            Balance = 0,
+            PurchasedSkins = new string[] { "0" },
+            ActiveSkinId = "0"
+        };
+        PlayerPrefs.SetString(SaveKey, JsonUtility.ToJson(newData));
+        PlayerPrefs.Save();
+        return newData;
+    }
+    public static void ResetAllProgress()
+    {
+        PlayerPrefs.DeleteKey(SaveKey);
+        PlayerPrefs.Save();
     }
 }

@@ -45,7 +45,7 @@ public class PlayerSkinApplier : MonoBehaviour
             skinModel.name = nogiObjectName;
             skinModel.transform.localPosition = pos;
             skinModel.transform.localRotation = rot;
-            skinModel.transform.localScale = scale;
+
 
             // Сохраняем ссылку на новую модель в PlayerControls
             if (playerControls != null)

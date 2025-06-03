@@ -26,7 +26,7 @@ public class SkinShopUI : MonoBehaviour
         DrawShop();
     }
 
-    void DrawShop()
+    public void DrawShop()
     {
         // Очищаем старое
         foreach (Transform child in contentRoot)
@@ -49,6 +49,36 @@ public class SkinShopUI : MonoBehaviour
             spawnedItems.Add(item);
         }
     }
+    public void ResetShop()
+    {
+        // ОБНОВЛЯЕМ ПЕРЕМЕННЫЕ из save!
+        var save = SaveManager.LoadProgress();
+        purchasedSkins = new HashSet<string>(save.PurchasedSkins ?? new string[0]);
+        activeSkinId = save.ActiveSkinId;
+        balance = save.Balance;
+
+        // Очищаем старое
+        foreach (Transform child in contentRoot)
+            Destroy(child.gameObject);
+        spawnedItems.Clear();
+
+        // Создаём новые элементы
+        foreach (var skin in skinCatalog.skins)
+        {
+            var go = Instantiate(skinShopItemPrefab, contentRoot);
+            var item = go.GetComponent<SkinShopItemUI>();
+            item.SetData(
+                skin,
+                purchasedSkins,
+                activeSkinId,
+                OnBuyClicked,
+                OnSelectClicked,
+                balance
+            );
+            spawnedItems.Add(item);
+        }
+    }
+
 
     void OnBuyClicked(SkinData skin)
     {

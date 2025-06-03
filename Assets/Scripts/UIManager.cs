@@ -37,12 +37,15 @@ public class UIManager : MonoBehaviour
     public GameObject cam;
     public GameController moving;
     bool Pause2Check;
+    [SerializeField] Text RecordText;
     void Start()
     {
         Button.SetActive(true);
         isPause = false;
         Result = 0;
         Pause2Check = false;
+        var save = SaveManager.LoadProgress();
+        RecordText.text = "Рекорд: " + save.Record.ToString();
     }
     void Update()
         {
