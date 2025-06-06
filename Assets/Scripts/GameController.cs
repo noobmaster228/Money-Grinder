@@ -29,7 +29,7 @@ public class GameController : MonoBehaviour
     public AudioClip MoneyAdd; //аудиоклип перевода баланса игрока
     public AudioClip RoundEndSound; //аудиоклип конца игры
     [SerializeField] UIManager UI; //управления UI игры
-    [SerializeField] PlayerControls playerMovement; //скрипт управления игрока
+    public PlayerControls playerMovement; //скрипт управления игрока
     void Start()
     {
         multiply = 1;
@@ -68,31 +68,38 @@ public class GameController : MonoBehaviour
                 BonusSounds.PlayBonusSound(tag);
                 playerMovement.speed += 1;
                 waterSpeed.scrollSpeed += 0.01f;
+                playerMovement.SpeedEffect.Play();
                 break;
             case "-Speed":
                 BonusSounds.PlayBonusSound(tag);
                 playerMovement.speed -= 1;
                 waterSpeed.scrollSpeed -= 0.01f;
+                playerMovement.NEffect.Play();
                 if (playerMovement.speed == 0)
                 {
+                    playerMovement.walkEffect.Stop();
                     UI.Death();
                 }
                 break;
             case "+Money":
                 BonusSounds.PlayBonusSound(tag);
+                playerMovement.PEffect.Play();
                 MoneyCount += 100;
                 break;
             case "-Money":
                 BonusSounds.PlayBonusSound(tag);
                 MoneyCount -= 100;
+                playerMovement.NEffect.Play();
                 break;
             case "+Points":
                 BonusSounds.PlayBonusSound(tag);
+                playerMovement.PEffect.Play();
                 PointsRate += 10;
                 break;
             case "-Points":
                 BonusSounds.PlayBonusSound(tag);
                 PointsRate -= 10;
+                playerMovement.NEffect.Play();
                 break;
             case "Money":
                 itemAudio = other.GetComponent<AudioSource>();
@@ -124,10 +131,12 @@ public class GameController : MonoBehaviour
                 if (isShield)
                 {
                     playerAudio.PlayOneShot(ShieldBreakSound);
+                    playerMovement.ShieldEffect.Stop();
                     StartCoroutine(UI.ShieldBreak());
                 }
                 else
                 {
+                    playerMovement.SawHitEffect.Play();
                     playerAudio.PlayOneShot(itemAudio.clip);
                     UI.Death();
                     playerMovement.limit = 200;
@@ -146,13 +155,16 @@ public class GameController : MonoBehaviour
                 other.gameObject.SetActive(false);
                 isShield = true;
                 UI.ShitImg.gameObject.SetActive(true);
+                playerMovement.ShieldEffect.Play();
                 break;
             case "+Multi":
                 BonusSounds.PlayBonusSound(tag);
+                playerMovement.PEffect.Play();
                 multiply += 0.5f;
                 break;
             case "-Multi":
                 BonusSounds.PlayBonusSound(tag);
+                playerMovement.NEffect.Play();
                 if (multiply <= 0)
                 {
                     multiply = 0;
@@ -165,10 +177,8 @@ public class GameController : MonoBehaviour
             case "noColor":
                 itemAudio = other.GetComponent<AudioSource>();
                 playerAudio.PlayOneShot(itemAudio.clip);
+                playerMovement.NoColorEffect.Play();
                 other.gameObject.SetActive(false);
-                /*if (grayCor != null)
-                { StopCoroutine(grayCor); }
-                grayCor = ;*/
                 StartCoroutine(UI.NoColor());
                 break;
             case "creditcard":
@@ -191,10 +201,13 @@ public class GameController : MonoBehaviour
     {
         safer = playerMovement.speed;
         playerMovement.speed = 0;
+        playerMovement.walkEffect.Stop();
         yield return new WaitForSeconds(0.75f);
+        playerMovement.ATMEffect.Play();
         MoneyCount += CreditcardCount;
         CreditcardCount = 0;
         yield return new WaitForSeconds(0.75f);
         playerMovement.speed = safer;
+        playerMovement.walkEffect.Play();
     }
 }

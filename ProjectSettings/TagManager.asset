@@ -23,6 +23,7 @@ TagManager:
   - ATM
   - trigger
   - SAW
+  - Ground
   layers:
   - Default
   - TransparentFX

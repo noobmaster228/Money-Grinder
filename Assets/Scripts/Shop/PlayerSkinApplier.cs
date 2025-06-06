@@ -6,6 +6,7 @@ public class PlayerSkinApplier : MonoBehaviour
     public Transform playerParent; // объект "Player" (родитель nogi)
     public string nogiObjectName = "nogi"; // имя заменяемого объекта
     public PlayerControls playerControls;   // ссылка на PlayerControls (или найди автоматически)
+    [SerializeField] UIManager uiManager;
 
     void Awake()
     {
@@ -45,11 +46,18 @@ public class PlayerSkinApplier : MonoBehaviour
             skinModel.name = nogiObjectName;
             skinModel.transform.localPosition = pos;
             skinModel.transform.localRotation = rot;
-
-
-            // Сохраняем ссылку на новую модель в PlayerControls
-            if (playerControls != null)
-                playerControls.PlayerModel = skinModel;
+            uiManager.PlayerModel = skinModel;
+            playerControls.PlayerModel = skinModel;
+            foreach (var ps in skinModel.GetComponentsInChildren<ParticleSystem>(true))
+                ps.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+            playerControls.ShieldEffect = skinModel.transform.Find("Shield effect")?.GetComponent<ParticleSystem>();
+            playerControls.SpeedEffect = skinModel.transform.Find("Speed effect")?.GetComponent<ParticleSystem>();
+            playerControls.walkEffect = skinModel.transform.Find("walkEffect")?.GetComponent<ParticleSystem>();
+            playerControls.PEffect = skinModel.transform.Find("+Effect")?.GetComponent<ParticleSystem>();
+            playerControls.NEffect = skinModel.transform.Find("-Effect")?.GetComponent<ParticleSystem>();
+            playerControls.ATMEffect = skinModel.transform.Find("ATMEffect")?.GetComponent<ParticleSystem>();
+            playerControls.SawHitEffect = skinModel.transform.Find("SawHitEffect")?.GetComponent<ParticleSystem>();
+            playerControls.NoColorEffect = skinModel.transform.Find("NoColorEffect")?.GetComponent<ParticleSystem>();
         }
         else if (skin != null && oldNogi != null && skin.skinMaterial != null)
         {
@@ -61,5 +69,6 @@ public class PlayerSkinApplier : MonoBehaviour
             if (playerControls != null)
                 playerControls.PlayerModel = oldNogi.gameObject;
         }
+
     }
 }

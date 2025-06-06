@@ -16,14 +16,14 @@ public static class BonusHelper
     {
         switch (tag)
         {
-            case "+Speed": return "+1 Speed";
-            case "+Money": return "+100 Money";
-            case "+Points": return "+20 Points per second";
-            case "+Multi": return "+0.5 Money Multiplier";
-            case "-Speed": return "-1 Speed";
-            case "-Money": return "-100 Money";
-            case "-Points": return "-20 Points per second";
-            case "-Multi": return "-0.5 Money Multiplier";
+            case "+Speed": return "+1 к скорости";
+            case "+Money": return "+100 к балансy";
+            case "+Points": return "+20 очков в секyндy";
+            case "+Multi": return "+0.5 к мyльтипликатору";
+            case "-Speed": return "-1 к скорости";
+            case "-Money": return "-100 к балансy";
+            case "-Points": return "-20 очков в секyндy";
+            case "-Multi": return "-0.5 к мyльтипликатору";
             default: return "";
         }
     }

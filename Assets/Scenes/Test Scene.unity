@@ -1164,6 +1164,16 @@ MonoBehaviour:
   - {fileID: -7415338822399774227, guid: f56884c537aa974428b674fbe6cb484a, type: 3}
   - {fileID: 6937662252447288470, guid: ea27b334eed9cf14a82d7f4f59a094e0, type: 3}
   - {fileID: 386312787208681064, guid: 9155ff5c4680c6b49b143ef9763b4e86, type: 3}
+  - {fileID: 7610247403734906737, guid: f314f275f2c3d8c49bb3be073754ece4, type: 3}
+  - {fileID: -4182812920399202078, guid: 374cb3828d4cc04408461a76c2c1f6c5, type: 3}
+  - {fileID: 1331526817434160312, guid: 288aac1cfdd7ac04fb93349333ac5284, type: 3}
+  - {fileID: 6572233794027406685, guid: 3673400f5947e934ca0ff63915100d94, type: 3}
+  - {fileID: -5115354580535639155, guid: 0cdde13787cf45b479baaf061285962d, type: 3}
+  - {fileID: 7610247403734906737, guid: 174e83bd0ebcbb241b48cf184f5bf401, type: 3}
+  - {fileID: -4182812920399202078, guid: 0bfccd90fe8ac2c49ba6ac152e28b138, type: 3}
+  - {fileID: 1331526817434160312, guid: 0110f5f7db6779f4db58a76115f7e96d, type: 3}
+  - {fileID: 6572233794027406685, guid: 78766d551eecbdb4ba2ed1c72dbb449c, type: 3}
+  - {fileID: -5115354580535639155, guid: d4c48ad355864d444b4685bd17acff17, type: 3}
   FirstChunk: {fileID: 1466599507}
   currentDifficulty: 1
   nextDifficultyThreshold: 0
@@ -1530,6 +1540,7 @@ MonoBehaviour:
   playerParent: {fileID: 3303823830718261071}
   nogiObjectName: nogi
   playerControls: {fileID: 2006210942}
+  uiManager: {fileID: 708605201}
 --- !u!4 &762704495
 Transform:
   m_ObjectHideFlags: 0
@@ -2672,6 +2683,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1294399188}
   - component: {fileID: 1294399187}
+  - component: {fileID: 1294399189}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -2756,6 +2768,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &1294399189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294399186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &1314880720
 GameObject:
   m_ObjectHideFlags: 0
@@ -2867,6 +2899,10 @@ PrefabInstance:
     - target: {fileID: 560394924565102951, guid: 586afda990ee8cc46bef24fb9b21b6de, type: 3}
       propertyPath: m_Name
       value: Chunk def 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 765443554577681796, guid: 586afda990ee8cc46bef24fb9b21b6de, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 4299324654524078800, guid: 586afda990ee8cc46bef24fb9b21b6de, type: 3}
       propertyPath: m_RootOrder
@@ -3750,6 +3786,10 @@ PrefabInstance:
       propertyPath: triggerActivator
       value: 
       objectReference: {fileID: 526002117}
+    - target: {fileID: 5787012262146002513, guid: c31043a558cdd1b4591270a19adc2ea8, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c31043a558cdd1b4591270a19adc2ea8, type: 3}
 --- !u!114 &2006210942 stripped

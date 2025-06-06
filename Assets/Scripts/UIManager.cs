@@ -9,7 +9,7 @@ public class UIManager : MonoBehaviour
     bool isPause;
     [SerializeField] GameObject Button;
     [SerializeField] Text MultiField;
-    [SerializeField] GameObject PlayerModel;
+    public GameObject PlayerModel;
     public GameObject ShitImg;
     [SerializeField] GameObject cont;
     [SerializeField] GameObject cont2;
@@ -48,7 +48,7 @@ public class UIManager : MonoBehaviour
         RecordText.text = "Рекорд: " + save.Record.ToString();
     }
     void Update()
-        {
+    {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPause)
@@ -92,6 +92,7 @@ public class UIManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         moving.isTimerOn = true;
+        moving.playerMovement.walkEffect.Play();
         isPause = false;
         cont.gameObject.SetActive(false);
         MainMenu.gameObject.SetActive(false);
@@ -114,11 +115,13 @@ public class UIManager : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         Pause2Check = false;
+
     }
     public void Pauser()//Пауза
     {
         Time.timeScale = 0f;
         moving.isTimerOn = false;
+        moving.playerMovement.walkEffect.Stop();
         isPause = true;
         cont.gameObject.SetActive(true);
         MainMenu.gameObject.SetActive(true);
@@ -129,6 +132,7 @@ public class UIManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         PauseButton.SetActive(false);
         Pause2Check = false;
+
     }
     public void Pauser2()//Пауза пока игра не началась
     {
@@ -190,6 +194,7 @@ public class UIManager : MonoBehaviour
         Button.SetActive(false);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        moving.playerMovement.walkEffect.Play();
     }
     public void Death()//Смерть игрока
     {
@@ -197,6 +202,7 @@ public class UIManager : MonoBehaviour
         GameOver.gameObject.SetActive(true);
         pausemenu.gameObject.SetActive(true);
         moving.isTimerOn = false;
+        moving.playerMovement.walkEffect.Stop();
         if (SceneNum == 9)
         {
             StartCoroutine(ResultCount2());
@@ -274,33 +280,28 @@ public class UIManager : MonoBehaviour
     }
     public IEnumerator ShieldBreak()//анимация Пролом щита
     {
-        for (int i=0; i<3; i++)
+        for (int i = 0; i < 3; i++)
         {
             PlayerModel.gameObject.SetActive(false);
             ShitImg.gameObject.SetActive(false);
             yield return new WaitForSeconds(0.1f);
             PlayerModel.gameObject.SetActive(true);
             ShitImg.gameObject.SetActive(true);
+            foreach (var ps in PlayerModel.GetComponentsInChildren<ParticleSystem>())
+                ps.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
             yield return new WaitForSeconds(0.5f);
         }
         PlayerModel.gameObject.SetActive(false);
         ShitImg.gameObject.SetActive(false);
         yield return new WaitForSeconds(0.1f);
         PlayerModel.gameObject.SetActive(true);
+        foreach (var ps in PlayerModel.GetComponentsInChildren<ParticleSystem>())
+            ps.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
         moving.isShield = false;
     }
     public IEnumerator NoColor()//Отключение цвета
     {
-        for (int i = 0; i < badMoneyRend.Length; i++)
-        {
-            foreach (var item in badMoneyRend[i].GetComponentsInChildren<MeshRenderer>())
-            {
-                Debug.Log(item.material + " " + badBagMat);
-                if (item.material.name.Substring(6, 3) != badBagMat.name.Substring(6, 3))
-                { item.material = goodMat; }
-            }
-        }
-        cam.GetComponent<Grayscale>().enabled = true;
+        GrayscaleRenderFeature.IsActive = true;
         colourSlider.gameObject.SetActive(true);
         colourSlider.value = 4f;
         float time = 0f;
@@ -311,16 +312,6 @@ public class UIManager : MonoBehaviour
             yield return null;
         }
         colourSlider.gameObject.SetActive(false);
-        cam.GetComponent<Grayscale>().enabled = false;
-        for (int i = 0; i < badMoneyRend.Length; i++)
-        {
-            foreach (var item in badMoneyRend[i].GetComponentsInChildren<MeshRenderer>())
-            {
-                if (item.material.name.Substring(6, 3) != badBagMat.name.Substring(6, 3))
-                {
-                    item.material = badMat;
-                }
-            }
-        }
+        GrayscaleRenderFeature.IsActive = false;
     }
 }

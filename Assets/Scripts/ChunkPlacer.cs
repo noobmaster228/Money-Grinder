@@ -37,7 +37,7 @@ public class ChunkPlacer : MonoBehaviour
             Destroy(spawnedChunks[0].gameObject);
             spawnedChunks.RemoveAt(0);
         }
-        if ((Player.position.x <= nextDifficultyThreshold) && (currentDifficulty < 8)) //повысить сложность и следующую контрольную точку
+        if ((Player.position.x <= nextDifficultyThreshold) && (currentDifficulty < 9)) //повысить сложность и следующую контрольную точку
         {
             currentDifficulty += 1;
             nextDifficultyThreshold -= 125;
