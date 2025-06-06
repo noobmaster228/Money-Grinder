@@ -190,17 +190,19 @@ public class GameController : MonoBehaviour
             case "ATM":
                 itemAudio = other.GetComponent<AudioSource>();
                 playerAudio.PlayOneShot(itemAudio.clip);
-                StartCoroutine(ATMTransfer(playerMovement.speed));
+                StartCoroutine(ATMTransfer(playerMovement.speed, playerMovement.sideSpeed));
                 break;
             case "trigger":
                 triggerActivator.SpawnChunk();
                 break;
         }
     }
-    IEnumerator ATMTransfer(float safer) //перевод денег с баланса карты на баланс денег.
+    IEnumerator ATMTransfer(float safer, float safer2) //перевод денег с баланса карты на баланс денег.
     {
         safer = playerMovement.speed;
+        safer2 = playerMovement.sideSpeed;
         playerMovement.speed = 0;
+        playerMovement.sideSpeed=0;
         playerMovement.walkEffect.Stop();
         yield return new WaitForSeconds(0.75f);
         playerMovement.ATMEffect.Play();
@@ -208,6 +210,7 @@ public class GameController : MonoBehaviour
         CreditcardCount = 0;
         yield return new WaitForSeconds(0.75f);
         playerMovement.speed = safer;
+        playerMovement.sideSpeed=safer2;
         playerMovement.walkEffect.Play();
     }
 }

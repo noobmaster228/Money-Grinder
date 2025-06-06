@@ -8,14 +8,16 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] Quaternion zeroRotation; //нет поворота
     [SerializeField] Quaternion leftRotation; //поворот налево
     [SerializeField] Quaternion rightRotation; //поворот направо
-    [SerializeField] float lerpRotation = 0.5f; //плавность поворота
+    [SerializeField] float lerpRotation; //плавность поворота
     public float speed; //Скорость
-    float delta; //Изменение координаты Z
+    public float sideSpeed;
+    float moveDirectionZ = 0f; //Изменение координаты Z
     float screenMiddle; //Середина экрана
-    public float limit = 1.8f; //ограничение игрока по оси Z
+    public float limit;//ограничение игрока по оси Z
     bool isTimerOn; //запуск таймера
     Rigidbody rb;
     public float jumpPower;
+    bool jumpRequested = false;
     bool isGrounded = true;
     Vector2 startTouch;
     [HideInInspector] public ParticleSystem ShieldEffect;
@@ -37,10 +39,9 @@ public class PlayerControls : MonoBehaviour
         {
 #if UNITY_EDITOR || UNITY_STANDALONE
             if (isGrounded && Input.GetKeyDown(KeyCode.Space))
-                Jump();
+                jumpRequested = true;
 
 #endif
-
             if (Application.isMobilePlatform && isGrounded)
             {
                 if (Input.touchCount > 0)
@@ -52,53 +53,70 @@ public class PlayerControls : MonoBehaviour
                     {
                         Vector2 endTouch = touch.position;
                         if (endTouch.y - startTouch.y > 100f && Mathf.Abs(endTouch.x - startTouch.x) < 100f)
-                            Jump();
+                            jumpRequested = true;
                     }
                 }
             }
-            transform.position -= new Vector3(speed * Time.deltaTime, 0, 0); //Движение по оси X
-            delta = 0; //Если нет никакого ввода то изменение коордианты Z = 0
-            if (!Application.isMobilePlatform)
+            moveDirectionZ = 0f;
+
+#if UNITY_EDITOR || UNITY_STANDALONE
+            ChangeAngle(zeroRotation);
+            if (Input.GetKey(KeyCode.A))
             {
-                ChangeAngle(zeroRotation);
-                if (Input.GetKey(KeyCode.A))
-                {
-                    delta = -speed * Time.deltaTime;
-                    ChangeAngle(leftRotation);
-                }
-                if (Input.GetKey(KeyCode.D))
-                {
-                    delta = speed * Time.deltaTime;
-                    ChangeAngle(rightRotation);
-                }
-                transform.position = new Vector3(transform.position.x, transform.position.y, Mathf.Clamp(transform.position.z + delta, -limit, limit));
+                moveDirectionZ = -1f;
+                ChangeAngle(leftRotation);
             }
-            else
+            if (Input.GetKey(KeyCode.D))
             {
-                if (Input.touchCount > 0) //проверка нажатий
+                moveDirectionZ = 1f;
+                ChangeAngle(rightRotation);
+            }
+#endif
+            if (Application.isMobilePlatform)
+            {
+                if (Input.touchCount > 0)
                 {
-                    Touch touch = Input.GetTouch(0);  //получение первого касания
-
-                    float direction; //направление движения
-
-                    if (touch.position.x < screenMiddle) //проверка стороны нажатия
+                    Touch touch = Input.GetTouch(0);
+                    if (touch.phase == TouchPhase.Stationary || touch.phase == TouchPhase.Moved)
                     {
-                        direction = -1f;
-                        ChangeAngle(leftRotation); //поворот модели налево
+                        if (touch.position.x < screenMiddle)
+                        {
+                            moveDirectionZ = -1f;
+                            ChangeAngle(leftRotation);
+                        }
+                        else
+                        {
+                            moveDirectionZ = 1f;
+                            ChangeAngle(rightRotation);
+                        }
                     }
                     else
                     {
-                        direction = 1f;
-                        ChangeAngle(rightRotation); //поворот модели налево
+                        ChangeAngle(zeroRotation);
                     }
-                    delta = direction * speed * Time.deltaTime; //скорость движения направо и налево
                 }
                 else
                 {
-                    ChangeAngle(zeroRotation); //не поворачивать модель
+                    ChangeAngle(zeroRotation);
                 }
-                transform.position = new Vector3(transform.position.x, transform.position.y, Mathf.Clamp(transform.position.z + delta, -limit, limit)); //движение игрока налево или направо с ограничением 
             }
+        }
+    }
+    void FixedUpdate()
+    {
+        if (!movement.isTimerOn)
+            return;
+        rb.velocity = new Vector3(-speed, rb.velocity.y, 0);
+
+        if (moveDirectionZ != 0)
+        {
+            float nextZ = rb.position.z + moveDirectionZ * sideSpeed * Time.fixedDeltaTime;
+            float clampedZ = Mathf.Clamp(nextZ, -limit, limit);
+            rb.MovePosition(new Vector3(rb.position.x, rb.position.y, clampedZ));
+        }
+        if (jumpRequested && isGrounded)
+        {
+            Jump();
         }
     }
     public void Accelerate()
@@ -127,6 +145,7 @@ public class PlayerControls : MonoBehaviour
         rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z); // сбросить Y скорость
         rb.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
         isGrounded = false;
+        jumpRequested = false;
     }
     void OnCollisionEnter(Collision other)
     {
