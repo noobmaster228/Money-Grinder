@@ -7,19 +7,21 @@ public class SaveData
     public float Balance;
     public string[] PurchasedSkins;
     public string ActiveSkinId;
+    public float PremiumBalance;
 }
 
 public static class SaveManager
 {
     private const string SaveKey = "SaveData";
-    public static void SaveProgress(float record, float balance, string[] purchasedSkins, string activeSkinId)
+    public static void SaveProgress(float record, float balance, string[] purchasedSkins, string activeSkinId, float prem)
     {
         var data = new SaveData
         {
             Record = record,
             Balance = balance,
             PurchasedSkins = purchasedSkins,
-            ActiveSkinId = activeSkinId
+            ActiveSkinId = activeSkinId,
+            PremiumBalance = prem
         };
         PlayerPrefs.SetString(SaveKey, JsonUtility.ToJson(data));
         PlayerPrefs.Save();

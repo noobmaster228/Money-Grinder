@@ -8,10 +8,12 @@ public class SkinShopUI : MonoBehaviour
     public Transform contentRoot;
     public GameObject skinShopItemPrefab;
     public Text balanceText;
+    public Text premBalanceText;
 
     private HashSet<string> purchasedSkins = new HashSet<string>();
     private string activeSkinId;
     private float balance;
+    private float premBalance;
 
     // Храним ссылки на UI элементов магазина для быстрого обновления
     private List<SkinShopItemUI> spawnedItems = new List<SkinShopItemUI>();
@@ -22,6 +24,7 @@ public class SkinShopUI : MonoBehaviour
         purchasedSkins = new HashSet<string>(save.PurchasedSkins ?? new string[0]);
         activeSkinId = save.ActiveSkinId;
         balance = save.Balance;
+        premBalance = save.PremiumBalance;
         UpdateBalanceUI(); // отображаем баланс на старте
         DrawShop();
     }
@@ -44,7 +47,9 @@ public class SkinShopUI : MonoBehaviour
                 activeSkinId,
                 OnBuyClicked,
                 OnSelectClicked,
-                balance
+                OnPremBuyClicked,
+                balance,
+                premBalance
             );
             spawnedItems.Add(item);
         }
@@ -56,6 +61,7 @@ public class SkinShopUI : MonoBehaviour
         purchasedSkins = new HashSet<string>(save.PurchasedSkins ?? new string[0]);
         activeSkinId = save.ActiveSkinId;
         balance = save.Balance;
+        premBalance = save.PremiumBalance;
 
         // Очищаем старое
         foreach (Transform child in contentRoot)
@@ -73,7 +79,9 @@ public class SkinShopUI : MonoBehaviour
                 activeSkinId,
                 OnBuyClicked,
                 OnSelectClicked,
-                balance
+                OnPremBuyClicked,
+                balance,
+                premBalance
             );
             spawnedItems.Add(item);
         }
@@ -88,13 +96,28 @@ public class SkinShopUI : MonoBehaviour
         balance -= skin.price;
         purchasedSkins.Add(skin.skinId);
 
-        SaveManager.SaveProgressOnlyStats(SaveManager.LoadProgress().Record, balance);
-        SaveManager.SaveProgressOnlySkins(new List<string>(purchasedSkins).ToArray(), activeSkinId);
-        UpdateBalanceUI(); // обновляем текст баланса
-        // Обновляем только текущий элемент магазина
+        SaveManager.SaveProgress(SaveManager.LoadProgress().Record, balance, new List<string>(purchasedSkins).ToArray(), activeSkinId, premBalance);
+        UpdateBalanceUI();
         var item = spawnedItems.Find(i => i.skin.skinId == skin.skinId);
         if (item != null)
-            item.UpdateState(purchasedSkins, activeSkinId, balance);
+            item.UpdateState(purchasedSkins, activeSkinId, balance, premBalance);
+    }
+
+    void OnPremBuyClicked(SkinData skin)
+    {
+        if (premBalance < skin.premPrice || purchasedSkins.Contains(skin.skinId))
+            return;
+
+        premBalance -= skin.premPrice;
+        purchasedSkins.Add(skin.skinId);
+
+        var progress = SaveManager.LoadProgress();
+        SaveManager.SaveProgress(progress.Record, balance, new List<string>(purchasedSkins).ToArray(), activeSkinId, premBalance);
+
+        UpdateBalanceUI();
+        var item = spawnedItems.Find(i => i.skin.skinId == skin.skinId);
+        if (item != null)
+            item.UpdateState(purchasedSkins, activeSkinId, balance, premBalance);
     }
 
     void OnSelectClicked(SkinData skin)
@@ -107,11 +130,12 @@ public class SkinShopUI : MonoBehaviour
 
         // Обновляем состояние у всех элементов (сброс у предыдущего, включение у нового)
         foreach (var item in spawnedItems)
-            item.UpdateState(purchasedSkins, activeSkinId, balance);
+            item.UpdateState(purchasedSkins, activeSkinId, balance, premBalance);
     }
     void UpdateBalanceUI()
     {
         if (balanceText != null)
             balanceText.text = balance.ToString("#,0").Replace(',', '\''); // формат с апострофами, если надо
+        premBalanceText.text=premBalance.ToString("#,0").Replace(',', '\'');
     }
 }
