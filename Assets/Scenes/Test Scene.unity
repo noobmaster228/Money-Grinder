@@ -3774,18 +3774,6 @@ PrefabInstance:
       propertyPath: triggerActivator
       value: 
       objectReference: {fileID: 526002117}
-    - target: {fileID: 5787012262146002513, guid: c31043a558cdd1b4591270a19adc2ea8, type: 3}
-      propertyPath: m_Size.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6925492198081800614, guid: c31043a558cdd1b4591270a19adc2ea8, type: 3}
-      propertyPath: m_Interpolate
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6925492198081800614, guid: c31043a558cdd1b4591270a19adc2ea8, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8834925289880155678, guid: c31043a558cdd1b4591270a19adc2ea8, type: 3}
       propertyPath: jumpPower
       value: 4
@@ -3794,7 +3782,10 @@ PrefabInstance:
       propertyPath: sideSpeed
       value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7223075452882764036, guid: c31043a558cdd1b4591270a19adc2ea8, type: 3}
+    - {fileID: 1500347903, guid: c31043a558cdd1b4591270a19adc2ea8, type: 3}
+    - {fileID: 1500347904, guid: c31043a558cdd1b4591270a19adc2ea8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c31043a558cdd1b4591270a19adc2ea8, type: 3}
 --- !u!114 &2006210942 stripped
 MonoBehaviour:

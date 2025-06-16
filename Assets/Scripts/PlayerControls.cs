@@ -4,22 +4,27 @@ using UnityEngine;
 public class PlayerControls : MonoBehaviour
 {
     [SerializeField] GameController movement;
-    public GameObject PlayerModel; //3D модель игрока
-    [SerializeField] Quaternion zeroRotation; //нет поворота
-    [SerializeField] Quaternion leftRotation; //поворот налево
-    [SerializeField] Quaternion rightRotation; //поворот направо
-    [SerializeField] float lerpRotation; //плавность поворота
-    public float speed; //Скорость
-    public float sideSpeed;
-    float moveDirectionZ = 0f; //Изменение координаты Z
-    float screenMiddle; //Середина экрана
-    public float limit;//ограничение игрока по оси Z
-    bool isTimerOn; //запуск таймера
-    Rigidbody rb;
-    public float jumpPower;
-    bool jumpRequested = false;
-    bool isGrounded = true;
-    Vector2 startTouch;
+    public GameObject PlayerModel;
+    [SerializeField] Quaternion zeroRotation;
+    [SerializeField] Quaternion leftRotation;
+    [SerializeField] Quaternion rightRotation;
+    [SerializeField] float lerpRotation;
+    public float speed;
+    public float limit = 1.8f;
+    private float screenMiddle;
+    public CharacterController controller;
+    private Vector3 velocity;
+    [SerializeField] float gravity = -20f;
+    [SerializeField] float jumpHeight = 2f;
+    private float verticalVelocity;
+
+    // Параметры для плавного бокового движения
+    public float lateralAcceleration; // ускорение (чем больше, тем быстрее набирает)
+    public float lateralMaxSpeed;  // максимальная скорость смещения по Z
+    public float lateralDeceleration; // замедление если нет ввода
+    private float currentLateralSpeed = 0f;
+    private float targetLateral = 0f;
+
     [HideInInspector] public ParticleSystem ShieldEffect;
     [HideInInspector] public ParticleSystem SpeedEffect;
     [HideInInspector] public ParticleSystem walkEffect;
@@ -28,71 +33,46 @@ public class PlayerControls : MonoBehaviour
     [HideInInspector] public ParticleSystem ATMEffect;
     [HideInInspector] public ParticleSystem SawHitEffect;
     [HideInInspector] public ParticleSystem NoColorEffect;
+
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        screenMiddle = Screen.width / 2f; //разделение экрана на две половины
+        screenMiddle = Screen.width / 2f;
     }
-    void Update() //управление влево и вправо и движение вперед
+
+    void Update()
     {
         if (movement.isTimerOn)
         {
-#if UNITY_EDITOR || UNITY_STANDALONE
-            if (isGrounded && Input.GetKeyDown(KeyCode.Space))
-                jumpRequested = true;
+            targetLateral = 0f;
 
-#endif
-            if (Application.isMobilePlatform && isGrounded)
+            if (!Application.isMobilePlatform)
             {
-                if (Input.touchCount > 0)
+                ChangeAngle(zeroRotation);
+                if (Input.GetKey(KeyCode.A))
                 {
-                    Touch touch = Input.GetTouch(0);
-                    if (touch.phase == TouchPhase.Began)
-                        startTouch = touch.position;
-                    if (touch.phase == TouchPhase.Ended)
-                    {
-                        Vector2 endTouch = touch.position;
-                        if (endTouch.y - startTouch.y > 100f && Mathf.Abs(endTouch.x - startTouch.x) < 100f)
-                            jumpRequested = true;
-                    }
+                    targetLateral = -1f;
+                    ChangeAngle(leftRotation);
+                }
+                if (Input.GetKey(KeyCode.D))
+                {
+                    targetLateral = 1f;
+                    ChangeAngle(rightRotation);
                 }
             }
-            moveDirectionZ = 0f;
-
-#if UNITY_EDITOR || UNITY_STANDALONE
-            ChangeAngle(zeroRotation);
-            if (Input.GetKey(KeyCode.A))
-            {
-                moveDirectionZ = -1f;
-                ChangeAngle(leftRotation);
-            }
-            if (Input.GetKey(KeyCode.D))
-            {
-                moveDirectionZ = 1f;
-                ChangeAngle(rightRotation);
-            }
-#endif
-            if (Application.isMobilePlatform)
+            else
             {
                 if (Input.touchCount > 0)
                 {
                     Touch touch = Input.GetTouch(0);
-                    if (touch.phase == TouchPhase.Stationary || touch.phase == TouchPhase.Moved)
+                    if (touch.position.x < screenMiddle)
                     {
-                        if (touch.position.x < screenMiddle)
-                        {
-                            moveDirectionZ = -1f;
-                            ChangeAngle(leftRotation);
-                        }
-                        else
-                        {
-                            moveDirectionZ = 1f;
-                            ChangeAngle(rightRotation);
-                        }
+                        targetLateral = -1f;
+                        ChangeAngle(leftRotation);
                     }
                     else
                     {
-                        ChangeAngle(zeroRotation);
+                        targetLateral = 1f;
+                        ChangeAngle(rightRotation);
                     }
                 }
                 else
@@ -100,30 +80,49 @@ public class PlayerControls : MonoBehaviour
                     ChangeAngle(zeroRotation);
                 }
             }
-        }
-    }
-    void FixedUpdate()
-    {
-        if (!movement.isTimerOn)
-            return;
-        rb.velocity = new Vector3(-speed, rb.velocity.y, 0);
 
-        if (moveDirectionZ != 0)
-        {
-            float nextZ = rb.position.z + moveDirectionZ * sideSpeed * Time.fixedDeltaTime;
-            float clampedZ = Mathf.Clamp(nextZ, -limit, limit);
-            rb.MovePosition(new Vector3(rb.position.x, rb.position.y, clampedZ));
-        }
-        if (jumpRequested && isGrounded)
-        {
-            Jump();
+            // Плавное ускорение и торможение по Z
+            if (Mathf.Abs(targetLateral) > 0.01f)
+            {
+                currentLateralSpeed = Mathf.MoveTowards(currentLateralSpeed, targetLateral * lateralMaxSpeed, lateralAcceleration * Time.deltaTime);
+            }
+            else
+            {
+                // Плавное замедление если нет ввода
+                currentLateralSpeed = Mathf.MoveTowards(currentLateralSpeed, 0f, lateralDeceleration * Time.deltaTime);
+            }
+
+            // Гравитация
+            if (controller.isGrounded)
+            {
+                if (verticalVelocity < 0)
+                    verticalVelocity = -2f;
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    verticalVelocity = Mathf.Sqrt(jumpHeight * -2f * gravity);
+                }
+            }
+            verticalVelocity += gravity * Time.deltaTime;
+
+            // Движение по X (всегда влево)
+            Vector3 move = Vector3.left * speed;
+            // Плавное боковое движение по Z
+            move += Vector3.forward * currentLateralSpeed;
+            move.y = verticalVelocity;
+            controller.Move(move * Time.deltaTime);
+
+            // Ограничение по Z
+            Vector3 pos = transform.position;
+            pos.z = Mathf.Clamp(pos.z, -limit, limit);
+            transform.position = pos;
         }
     }
+
     public void Accelerate()
     {
         StartCoroutine(StartAcceleration(speed));
     }
-    public IEnumerator StartAcceleration(float speedy) //Плавное ускорение в начале уровня
+    public IEnumerator StartAcceleration(float speedy)
     {
         speed = 0;
         yield return new WaitForSeconds(0.25f);
@@ -136,20 +135,8 @@ public class PlayerControls : MonoBehaviour
             speed += 1;
         }
     }
-    public void ChangeAngle(Quaternion angle) //Поворот персонажа
+    public void ChangeAngle(Quaternion angle)
     {
         PlayerModel.transform.localRotation = Quaternion.Lerp(PlayerModel.transform.localRotation, angle, lerpRotation);
-    }
-    void Jump()
-    {
-        rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z); // сбросить Y скорость
-        rb.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
-        isGrounded = false;
-        jumpRequested = false;
-    }
-    void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.CompareTag("Ground"))
-            isGrounded = true;
     }
 }

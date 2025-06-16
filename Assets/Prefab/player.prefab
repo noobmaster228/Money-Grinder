@@ -207,11 +207,11 @@ GameObject:
   - component: {fileID: 8670876904739855672}
   - component: {fileID: 2828942377046969774}
   - component: {fileID: 5787012262146002513}
-  - component: {fileID: 6925492198081800614}
   - component: {fileID: 3874030297561000616}
   - component: {fileID: 1796041488338973778}
   - component: {fileID: 4802520189923237025}
   - component: {fileID: 8834925289880155678}
+  - component: {fileID: 8108523904413140380}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -298,24 +298,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.25, y: 1, z: 0.25}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &6925492198081800614
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 248079397904145693}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 1
-  m_Constraints: 112
-  m_CollisionDetection: 2
+  m_Size: {x: 0.25, y: 0.42152768, z: 0.25}
+  m_Center: {x: 0, y: -0.28923616, z: 0}
 --- !u!114 &3874030297561000616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,7 +319,7 @@ MonoBehaviour:
   badMoneybagValue: 20
   moneyValue: 1
   badMoneyValue: 2
-  startPos: {x: 50, y: 0.369, z: 0}
+  startPos: {x: 50, y: 0.5, z: 0}
   endPos: {x: -157.574, y: 1.5, z: -100.021}
   MoneyCount: 0
   Points: 0
@@ -344,7 +328,6 @@ MonoBehaviour:
   CreditcardCount: 0
   triggerActivator: {fileID: 0}
   waterSpeed: {fileID: 848411191}
-  falling: {fileID: 6925492198081800614}
   playerAudio: {fileID: 1796041488338973778}
   BonusSounds: {fileID: 4802520189923237025}
   ShieldBreakSound: {fileID: 8300000, guid: 8846c5957573bbf4392b7c3dea506876, type: 3}
@@ -499,7 +482,12 @@ MonoBehaviour:
   lerpRotation: 0.3
   speed: 4
   limit: 1.8
-  jumpPower: 8
+  controller: {fileID: 8108523904413140380}
+  gravity: -20
+  jumpHeight: 2
+  lateralAcceleration: 20
+  lateralMaxSpeed: 4
+  lateralDeceleration: 40
   ShieldEffect: {fileID: 0}
   SpeedEffect: {fileID: 0}
   walkEffect: {fileID: 0}
@@ -508,6 +496,24 @@ MonoBehaviour:
   ATMEffect: {fileID: 0}
   SawHitEffect: {fileID: 0}
   NoColorEffect: {fileID: 0}
+--- !u!143 &8108523904413140380
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 248079397904145693}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 0.5
+  m_Radius: 0.14
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.0001
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: -0.25, z: 0}
 --- !u!1 &879751849279001126
 GameObject:
   m_ObjectHideFlags: 0

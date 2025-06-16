@@ -198,7 +198,7 @@ public class UIManager : MonoBehaviour
     }
     public void Death()//Смерть игрока
     {
-        Destroy(moving.falling);
+        Destroy(moving.playerMovement.controller);
         GameOver.gameObject.SetActive(true);
         pausemenu.gameObject.SetActive(true);
         moving.isTimerOn = false;

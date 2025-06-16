@@ -20,7 +20,6 @@ public class GameController : MonoBehaviour
     public float CreditcardCount; //баланс игрока в кредитных карточках
     [SerializeField] ChunkPlacer triggerActivator; //скрипт процедурной генерации 
     [SerializeField] WaterScroller waterSpeed; //скрипт дл€ движени€ текстуры воды
-    public Rigidbody falling; //управление компонентом Rigidbody
     AudioSource itemAudio; //источник звука предмета
     public AudioSource playerAudio; //источник звука игрока
     [SerializeField] BonusSoundPlayer BonusSounds; //скрипт управл€ющий звуком бонусов
@@ -30,6 +29,11 @@ public class GameController : MonoBehaviour
     public AudioClip RoundEndSound; //аудиоклип конца игры
     [SerializeField] UIManager UI; //управлени€ UI игры
     public PlayerControls playerMovement; //скрипт управлени€ игрока
+    private void Awake()
+    {
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 60;
+    }
     void Start()
     {
         multiply = 1;
@@ -67,12 +71,18 @@ public class GameController : MonoBehaviour
             case "+Speed":
                 BonusSounds.PlayBonusSound(tag);
                 playerMovement.speed += 1;
+                playerMovement.lateralMaxSpeed += 1;
+                playerMovement.lateralDeceleration = playerMovement.lateralMaxSpeed * 10;
+                playerMovement.lateralAcceleration = playerMovement.lateralMaxSpeed * 5;
                 waterSpeed.scrollSpeed += 0.01f;
                 playerMovement.SpeedEffect.Play();
                 break;
             case "-Speed":
                 BonusSounds.PlayBonusSound(tag);
                 playerMovement.speed -= 1;
+                playerMovement.lateralMaxSpeed -= 1;
+                playerMovement.lateralDeceleration = playerMovement.lateralMaxSpeed * 10;
+                playerMovement.lateralAcceleration = playerMovement.lateralMaxSpeed * 5;
                 waterSpeed.scrollSpeed -= 0.01f;
                 playerMovement.NEffect.Play();
                 if (playerMovement.speed == 0)
@@ -190,19 +200,22 @@ public class GameController : MonoBehaviour
             case "ATM":
                 itemAudio = other.GetComponent<AudioSource>();
                 playerAudio.PlayOneShot(itemAudio.clip);
-                StartCoroutine(ATMTransfer(playerMovement.speed, playerMovement.sideSpeed));
+                StartCoroutine(ATMTransfer(playerMovement.speed, playerMovement.lateralMaxSpeed));
                 break;
             case "trigger":
                 triggerActivator.SpawnChunk();
+                other.gameObject.SetActive(false);
                 break;
         }
     }
     IEnumerator ATMTransfer(float safer, float safer2) //перевод денег с баланса карты на баланс денег.
     {
         safer = playerMovement.speed;
-        safer2 = playerMovement.sideSpeed;
+        safer2 = playerMovement.lateralMaxSpeed;
         playerMovement.speed = 0;
-        playerMovement.sideSpeed=0;
+        playerMovement.lateralMaxSpeed = 0;
+        playerMovement.lateralDeceleration = playerMovement.lateralMaxSpeed * 10;
+        playerMovement.lateralAcceleration = playerMovement.lateralMaxSpeed * 5;
         playerMovement.walkEffect.Stop();
         yield return new WaitForSeconds(0.75f);
         playerMovement.ATMEffect.Play();
@@ -210,7 +223,9 @@ public class GameController : MonoBehaviour
         CreditcardCount = 0;
         yield return new WaitForSeconds(0.75f);
         playerMovement.speed = safer;
-        playerMovement.sideSpeed=safer2;
+        playerMovement.lateralMaxSpeed = safer2;
+        playerMovement.lateralDeceleration = playerMovement.lateralMaxSpeed * 10;
+        playerMovement.lateralAcceleration = playerMovement.lateralMaxSpeed * 5;
         playerMovement.walkEffect.Play();
     }
 }

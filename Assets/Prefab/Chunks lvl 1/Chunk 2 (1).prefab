@@ -18,7 +18,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8217666025575757246
 Transform:
@@ -212,7 +212,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &696433690420372329
 Transform:
@@ -406,7 +406,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1421319520070565985
 Transform:
@@ -600,7 +600,7 @@ GameObject:
   m_TagString: MoneyBag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7986404138416240676
 Transform:
@@ -796,7 +796,7 @@ GameObject:
   m_TagString: MoneyBag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4853749186597894546
 Transform:
@@ -992,7 +992,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8329266814350446175
 Transform:
@@ -1186,7 +1186,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7427274435030778840
 Transform:
@@ -1380,7 +1380,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7972325352112078880
 Transform:
@@ -1574,7 +1574,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4053216541353172037
 Transform:
@@ -1768,7 +1768,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7693218904881521622
 Transform:
@@ -1962,7 +1962,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &997600668827226498
 Transform:
@@ -2156,7 +2156,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3874790438785024540
 Transform:
@@ -2350,7 +2350,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8754184173426758336
 Transform:
@@ -2544,7 +2544,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1837656437498272393
 Transform:
@@ -2738,7 +2738,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5624792009539667558
 Transform:
@@ -2932,7 +2932,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6369918975852226227
 Transform:
@@ -3126,7 +3126,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5746913537716709167
 Transform:
@@ -3320,7 +3320,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1889494396996242687
 Transform:
@@ -3514,7 +3514,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5675225970764164058
 Transform:
@@ -3708,7 +3708,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2642986565649194310
 Transform:
@@ -3902,7 +3902,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8381876161732184171
 Transform:
@@ -4096,7 +4096,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4970982668953501912
 Transform:
@@ -4290,7 +4290,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5360478545981255243
 Transform:
@@ -4484,7 +4484,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2931413591161049826
 Transform:
@@ -4678,7 +4678,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2415463439077607642
 Transform:
@@ -4872,7 +4872,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6706465014725165189
 Transform:
@@ -5066,7 +5066,7 @@ GameObject:
   m_TagString: MoneyBag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6457240980780499752
 Transform:
@@ -5262,7 +5262,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6090434023313211834
 Transform:
@@ -5456,7 +5456,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &732820777283066003
 Transform:
@@ -5650,7 +5650,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1990105389365379639
 Transform:
@@ -5844,7 +5844,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7272177340610550358
 Transform:
@@ -6038,7 +6038,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1125769133062067984
 Transform:
@@ -6232,7 +6232,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4938728633701144765
 Transform:
@@ -6426,7 +6426,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &9041263433550832023
 Transform:
@@ -6620,7 +6620,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5154570309242692846
 Transform:
@@ -6814,7 +6814,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8801393409855590019
 Transform:
@@ -7008,7 +7008,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6946840067858094088
 Transform:
@@ -7202,7 +7202,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3451181426799134698
 Transform:
@@ -7396,7 +7396,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1140218917953164358
 Transform:
@@ -7590,7 +7590,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2184360780433173156
 Transform:
@@ -7784,7 +7784,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4325075907046584290
 Transform:
@@ -7978,7 +7978,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2692441043777119403
 Transform:
@@ -8172,7 +8172,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6260275030982832467
 Transform:
@@ -8366,7 +8366,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &952272463839777721
 Transform:
@@ -8560,7 +8560,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2672159912090160339
 Transform:
@@ -8754,7 +8754,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &9214371681804078059
 Transform:
@@ -8948,7 +8948,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8233994112548712165
 Transform:
@@ -9142,7 +9142,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2215857162299332621
 Transform:
@@ -9336,7 +9336,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4112236961235626032
 Transform:
@@ -9530,7 +9530,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1338743087897413063
 Transform:
@@ -9724,7 +9724,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8950444760329126334
 Transform:
@@ -9918,7 +9918,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7949350697037012937
 Transform:
@@ -10112,7 +10112,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &329118442927283149
 Transform:
@@ -10306,7 +10306,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4825703982933729866
 Transform:
@@ -10500,7 +10500,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5938085670492998216
 Transform:
@@ -10694,7 +10694,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4704864632997093138
 Transform:
@@ -10888,7 +10888,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2782144681856926312
 Transform:
@@ -11082,7 +11082,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &926538921429212638
 Transform:
@@ -11276,7 +11276,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5803852658207669987
 Transform:
@@ -11470,7 +11470,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6841878055712524064
 Transform:
@@ -11664,7 +11664,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7910898815765014682
 Transform:
@@ -11858,7 +11858,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5792518377563253885
 Transform:
@@ -12052,7 +12052,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2275072069781175715
 Transform:
@@ -12246,7 +12246,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3370696445451969259
 Transform:
@@ -12440,7 +12440,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6108390457113190944
 Transform:
@@ -12634,7 +12634,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4867893763961967396
 Transform:
@@ -12828,7 +12828,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8274139361296678216
 Transform:
@@ -13022,7 +13022,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2705439771845246577
 Transform:
@@ -13216,7 +13216,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7572521433550922372
 Transform:
@@ -13410,7 +13410,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4798539094594774211
 Transform:
@@ -13604,7 +13604,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7225262163607842475
 Transform:
@@ -13798,7 +13798,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8490711401007484859
 Transform:
@@ -13992,7 +13992,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8467146566384336592
 Transform:
@@ -14186,7 +14186,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5311186145254312377
 Transform:
@@ -14380,7 +14380,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5942834447396531450
 Transform:
@@ -14574,7 +14574,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3593713045223981712
 Transform:
@@ -14768,7 +14768,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5692049722970999694
 Transform:
@@ -14962,7 +14962,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5522705380639714556
 Transform:
@@ -15156,7 +15156,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4841709054463383010
 Transform:
@@ -15350,7 +15350,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &853446206411935205
 Transform:
@@ -15544,7 +15544,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7668676907698728578
 Transform:
@@ -15738,7 +15738,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7205280764041609665
 Transform:
@@ -15932,7 +15932,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3826989976765945239
 Transform:
@@ -16126,7 +16126,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4372465590975880248
 Transform:
@@ -16320,7 +16320,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &959629164748656917
 Transform:
@@ -16514,7 +16514,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3984976347108423048
 Transform:
@@ -16708,7 +16708,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3009395784334356182
 Transform:
@@ -16902,7 +16902,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5196021059166028263
 Transform:
@@ -17096,7 +17096,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &926621083769840580
 Transform:
@@ -17290,7 +17290,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6994829223388812866
 Transform:
@@ -17484,7 +17484,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5335801952585909888
 Transform:
@@ -17678,7 +17678,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3657211308946284828
 Transform:
@@ -17872,7 +17872,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1627259293699778304
 Transform:
@@ -18066,7 +18066,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &12265319808555363
 Transform:
@@ -18260,7 +18260,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &647175783901744362
 Transform:
@@ -18454,7 +18454,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &640534439710725511
 Transform:
@@ -18648,7 +18648,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6857285415958111590
 Transform:
@@ -18842,7 +18842,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5155932783170233114
 Transform:
@@ -19036,7 +19036,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &29619291456412137
 Transform:
@@ -19230,7 +19230,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5058202747477917147
 Transform:
@@ -19424,7 +19424,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5502844887423223813
 Transform:
@@ -19618,7 +19618,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3070861408679036986
 Transform:
@@ -19812,7 +19812,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3345570331956456857
 Transform:
@@ -20006,7 +20006,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1426526727767225048
 Transform:
@@ -20200,7 +20200,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3990755247569348077
 Transform:
@@ -20394,7 +20394,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4744308952422948078
 Transform:
@@ -20588,7 +20588,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6648903404213654728
 Transform:
@@ -20782,7 +20782,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3101733816733852244
 Transform:
@@ -20976,7 +20976,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8773401370346012771
 Transform:
@@ -21170,7 +21170,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5007526955775929362
 Transform:
@@ -21364,7 +21364,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &9107063444043235319
 Transform:
@@ -21558,7 +21558,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6724143053636539889
 Transform:
@@ -21752,7 +21752,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6093752408563722284
 Transform:
@@ -21944,7 +21944,7 @@ GameObject:
   m_TagString: trigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2172074923448941845
 Transform:
@@ -22008,7 +22008,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8478915919199936109
 Transform:
@@ -22202,7 +22202,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3105109672854394080
 Transform:
@@ -22396,7 +22396,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2379132140576877194
 Transform:
@@ -22590,7 +22590,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &533135780699639117
 Transform:
@@ -22784,7 +22784,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &9163892614246898850
 Transform:
@@ -22978,7 +22978,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7193011384725152022
 Transform:
@@ -23172,7 +23172,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7183818310528810833
 Transform:
@@ -23366,7 +23366,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6292287684272061446
 Transform:
@@ -23560,7 +23560,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7127088125112487370
 Transform:
@@ -23754,7 +23754,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &579437153674015084
 Transform:
@@ -23948,7 +23948,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4154094865138892571
 Transform:
@@ -24142,7 +24142,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2690328108629993641
 Transform:
@@ -24336,7 +24336,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8036176352892888764
 Transform:
@@ -24530,7 +24530,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7248333670023750648
 Transform:
@@ -24724,7 +24724,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3810102626728653908
 Transform:
@@ -24918,7 +24918,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8792484880891901284
 Transform:
@@ -25112,7 +25112,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4591419787497700956
 Transform:
@@ -25306,7 +25306,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2033180059494407003
 Transform:
@@ -25500,7 +25500,7 @@ GameObject:
   m_TagString: MoneyBag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &9104444995452844470
 Transform:
@@ -25696,7 +25696,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6087783406240097199
 Transform:
@@ -25890,7 +25890,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &9049887047121918721
 Transform:
@@ -26084,7 +26084,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7915559630615328194
 Transform:
@@ -26278,7 +26278,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2715939025399794044
 Transform:
@@ -26472,7 +26472,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &556694507405566450
 Transform:
@@ -26666,7 +26666,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8750018866535713924
 Transform:
@@ -26860,7 +26860,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6516116748623412982
 Transform:
@@ -27054,7 +27054,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7310628749875013209
 Transform:
@@ -27248,7 +27248,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7877571736930229424
 Transform:
@@ -27442,7 +27442,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5186690138719975834
 Transform:
@@ -27636,7 +27636,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6170310130285255185
 Transform:
@@ -27830,7 +27830,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &671526687549996983
 Transform:
@@ -28024,7 +28024,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5027960289931728984
 Transform:
@@ -28218,7 +28218,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7428576860539200050
 Transform:
@@ -28412,7 +28412,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4902067921432279494
 Transform:
@@ -28606,7 +28606,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6032716602701879788
 Transform:
@@ -28800,7 +28800,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4525778910120684540
 Transform:
@@ -28994,7 +28994,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4722150553044002483
 Transform:
@@ -29188,7 +29188,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1548654121638126125
 Transform:
@@ -29382,7 +29382,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6817479652857117687
 Transform:
@@ -29576,7 +29576,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &397077291194080240
 Transform:
@@ -29770,7 +29770,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &838564875008137225
 Transform:
@@ -29964,7 +29964,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &518227375458207963
 Transform:
@@ -30158,7 +30158,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &92165392107696133
 Transform:
@@ -30352,7 +30352,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4703777009649404899
 Transform:
@@ -30546,7 +30546,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3489653388959994042
 Transform:
@@ -30740,7 +30740,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6849286133317300858
 Transform:
@@ -30934,7 +30934,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7837890025327732618
 Transform:
@@ -31128,7 +31128,7 @@ GameObject:
   m_TagString: MoneyBag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7057088154555020664
 Transform:
@@ -31324,7 +31324,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &9157015511167429824
 Transform:
@@ -31744,7 +31744,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6089972066830649363
 Transform:
@@ -31938,7 +31938,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3938001846978437160
 Transform:
@@ -32132,7 +32132,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &300495444113217710
 Transform:
@@ -32326,7 +32326,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7767799941628788748
 Transform:
@@ -32520,7 +32520,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &412564003018184736
 Transform:
@@ -32714,7 +32714,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6741658680742873855
 Transform:
@@ -32908,7 +32908,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8743336342817368913
 Transform:
@@ -33102,7 +33102,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &939937349810516558
 Transform:
@@ -33296,7 +33296,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4423584145851456561
 Transform:
@@ -33490,7 +33490,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6301347854531414658
 Transform:
@@ -33684,7 +33684,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &62328590203542274
 Transform:
@@ -33878,7 +33878,7 @@ GameObject:
   m_TagString: MoneyBag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8927544070565222794
 Transform:
@@ -34074,7 +34074,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3878877821918895672
 Transform:
@@ -34268,7 +34268,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &30223659903307067
 Transform:
@@ -34462,7 +34462,7 @@ GameObject:
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6155413488456349274
 Transform:
@@ -34709,6 +34709,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bag.5
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 5f615dfae9210b24ab9ef9f4f2ce5457, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f615dfae9210b24ab9ef9f4f2ce5457, type: 3}
 --- !u!4 &5675765158676537902 stripped
@@ -34787,6 +34791,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bag.5
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 5f615dfae9210b24ab9ef9f4f2ce5457, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f615dfae9210b24ab9ef9f4f2ce5457, type: 3}
 --- !u!4 &5810517212925363657 stripped
@@ -34864,6 +34872,10 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 5f615dfae9210b24ab9ef9f4f2ce5457, type: 3}
       propertyPath: m_Name
       value: Bag.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 5f615dfae9210b24ab9ef9f4f2ce5457, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f615dfae9210b24ab9ef9f4f2ce5457, type: 3}
@@ -35005,6 +35017,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bag.5
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 5f615dfae9210b24ab9ef9f4f2ce5457, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f615dfae9210b24ab9ef9f4f2ce5457, type: 3}
 --- !u!4 &9110730657806971431 stripped
@@ -35082,6 +35098,10 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 5f615dfae9210b24ab9ef9f4f2ce5457, type: 3}
       propertyPath: m_Name
       value: Bag.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 5f615dfae9210b24ab9ef9f4f2ce5457, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f615dfae9210b24ab9ef9f4f2ce5457, type: 3}
@@ -35230,6 +35250,10 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 5f615dfae9210b24ab9ef9f4f2ce5457, type: 3}
       propertyPath: m_Name
       value: Bag.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 5f615dfae9210b24ab9ef9f4f2ce5457, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f615dfae9210b24ab9ef9f4f2ce5457, type: 3}
