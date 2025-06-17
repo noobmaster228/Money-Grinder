@@ -3,16 +3,22 @@ using UnityEngine;
 
 public class ChunkPlacer : MonoBehaviour
 {
-    [SerializeField] Transform Player; //положение игрока
+    [Header("Chunks")]
     [SerializeField] Chunk[] ChunkPrefabs; //префабы заранее придуманых чанков
     [SerializeField] Chunk FirstChunk; //Первый чанк с которого игрок начинает игру
+    [SerializeField] List<Chunk> spawnedChunks = new List<Chunk>(); //Список заспавленных чанков
+
+    [Header("Player position tracking")]
+    [SerializeField] Transform Player; //положение игрока
     Vector3 offset = new Vector3(25, 0, 0); //расстояние через которое спавнится след чанк
+
+    [Header("Difficulty controls")]
     [SerializeField] int currentDifficulty; //сложность на данный момент уровня
     [SerializeField] int nextDifficultyThreshold; //координата Х следующего повышения сложности
     [SerializeField] int anotherDifficultyThreshold; //координата Х следующего повышения нижней планки сложности
     [SerializeField] int underlinedifficulty; //нижняя планка сложности
-    [SerializeField] List<Chunk> spawnedChunks = new List<Chunk>(); //Список заспавленных чанков
     [SerializeField] List<Chunk> suitableChunks = new List<Chunk>();
+    
     void Start()
     {
         spawnedChunks.Add(FirstChunk); //добавляем первый чанк в список заспавленных чанков

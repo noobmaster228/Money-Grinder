@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class SimpleRotation : MonoBehaviour
 {
-    public Vector3 rotationSpeed = new Vector3(0f, 125f, 0f);
-    public bool enableFloating;
-    public bool enableRotation;
-    public float floatAmplitude = 0.5f; // амплитуда движения
-    public float floatFrequency = 1f;   // частота (кол-во колебаний в секунду)
+    [SerializeField] Vector3 rotationSpeed = new Vector3(0f, 125f, 0f);
+    [SerializeField] bool enableFloating;
+    [SerializeField] bool enableRotation;
+    [SerializeField] float floatAmplitude = 0.5f; // амплитуда движения
+    [SerializeField] float floatFrequency = 1f;   // частота (кол-во колебаний в секунду)
     private Vector3 startPos;
 
     void Start()

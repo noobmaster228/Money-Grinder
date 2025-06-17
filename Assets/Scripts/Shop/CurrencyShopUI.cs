@@ -1,17 +1,18 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class CurrencyShopUI : MonoBehaviour
 {
-    public Text balanceText;
-    public Text premBalanceText;
+    [SerializeField] Text balanceText;
+    [SerializeField] Text premBalanceText;
 
-    public Button buyPremiumButton;
+    [SerializeField] Button buyPremiumButton;
 
-    public int addMoneyAmount = 1000;
-    public int addMoneyPrice = 10; // сколько премиум валюты тратится за покупку денег
+    [SerializeField] int addMoneyAmount = 1000;
+    [SerializeField] int addMoneyPrice = 10; // сколько премиум валюты тратится за покупку денег
 
-    public int buyPremiumAmount = 100;
+    [SerializeField] int buyPremiumAmount = 100;
 
     private float balance;
     private float premBalance;
@@ -53,7 +54,7 @@ public class CurrencyShopUI : MonoBehaviour
         StartCoroutine(SimulateApiPurchase());
     }
 
-    System.Collections.IEnumerator SimulateApiPurchase()
+    IEnumerator SimulateApiPurchase()
     {
         buyPremiumButton.interactable = false;
         // имитация задержки "платежа"

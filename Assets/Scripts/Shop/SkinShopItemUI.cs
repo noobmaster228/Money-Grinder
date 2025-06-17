@@ -5,15 +5,15 @@ using System.Collections.Generic;
 
 public class SkinShopItemUI : MonoBehaviour
 {
-    public Image icon;
-    public Text skinName;
-    public Text priceText;
-    public Text premPriceText;
-    public Button buyButton;
-    public Button premBuyButton;
-    public Button selectButton;
-    public Text statusText;
-    public GameObject Images;
+    [SerializeField] Image icon;
+    [SerializeField] Text skinName;
+    [SerializeField] Text priceText;
+    [SerializeField] Text premPriceText;
+    [SerializeField] Button buyButton;
+    [SerializeField] Button premBuyButton;
+    [SerializeField] Button selectButton;
+    [SerializeField] Text statusText;
+    [SerializeField] GameObject Images;
 
     [HideInInspector] public SkinData skin;
 

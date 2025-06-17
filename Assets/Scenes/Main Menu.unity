@@ -7399,13 +7399,12 @@ GameObject:
   - component: {fileID: 242013955}
   - component: {fileID: 242013956}
   - component: {fileID: 242013957}
-  - component: {fileID: 242013958}
   m_Layer: 0
   m_Name: Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &242013954
 Transform:
@@ -7453,6 +7452,7 @@ MonoBehaviour:
   ShopButton: {fileID: 448955174}
   RecordField: {fileID: 1028935629}
   BalanceField: {fileID: 1958937718}
+  PremBalanceField: {fileID: 955107811}
   ShopGrid: {fileID: 767119134}
   resetShop: {fileID: 242013956}
 --- !u!114 &242013956
@@ -7490,20 +7490,6 @@ MonoBehaviour:
   addMoneyAmount: 1000
   addMoneyPrice: 10
   buyPremiumAmount: 100
---- !u!114 &242013958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 242013953}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93a32940ddbfed341bb283978e65615d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  premBalance: 0
-  premBalanceText: {fileID: 955107811}
 --- !u!1 &246045247
 GameObject:
   m_ObjectHideFlags: 0
@@ -53271,7 +53257,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 242013958}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: RewardedAdManager, Assembly-CSharp
         m_MethodName: ShowRewardedAd
         m_Mode: 1

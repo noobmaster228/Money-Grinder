@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class PlayerSkinApplier : MonoBehaviour
 {
-    public SkinCatalog skinCatalog;
-    public Transform playerParent; // объект "Player" (родитель nogi)
-    public string nogiObjectName = "nogi"; // имя заменяемого объекта
-    public PlayerControls playerControls;   // ссылка на PlayerControls (или найди автоматически)
+    [SerializeField] SkinCatalog skinCatalog;
+    [SerializeField] Transform playerParent; // объект "Player" (родитель nogi)
+    [SerializeField] string nogiObjectName = "nogi"; // имя заменяемого объекта
+    [SerializeField] PlayerControls playerControls;   // ссылка на PlayerControls (или найди автоматически)
     [SerializeField] UIManager uiManager;
 
     void Awake()

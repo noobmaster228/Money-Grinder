@@ -9,9 +9,9 @@ public class BonusSoundPlayer : MonoBehaviour
         public string tag;
         public AudioClip clip;
     }
-    public List<BonusSound> bonusSounds;
-    public Dictionary<string, AudioClip> soundMap;
-    public AudioSource audioSource;
+    [SerializeField] List<BonusSound> bonusSounds;
+    [SerializeField] Dictionary<string, AudioClip> soundMap;
+    [SerializeField] AudioSource audioSource;
     void Awake()
     {
         soundMap = new Dictionary<string, AudioClip>();

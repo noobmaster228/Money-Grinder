@@ -5,39 +5,41 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    [Header("Essentials")]
     public int SceneNum;
     bool isPause;
+    public GameController moving;
     [SerializeField] GameObject Button;
-    [SerializeField] Text MultiField;
     public GameObject PlayerModel;
-    public GameObject ShitImg;
+    bool Pause2Check;
+
+    [Header("Pause menu")]
     [SerializeField] GameObject cont;
     [SerializeField] GameObject cont2;
     [SerializeField] GameObject rest;
     [SerializeField] GameObject exit;
     [SerializeField] GameObject pausemenu;
-    [SerializeField] GameObject goodjob;
-    [SerializeField] GameObject wip;
     [SerializeField] GameObject MainMenu;
-    [SerializeField] GameObject GameOver;
     [SerializeField] GameObject PauseButton;
+
+    [Header("In-game stats")]
     [SerializeField] Text CreditcardField;
     [SerializeField] Text MoneyCountField;
     [SerializeField] Text PointsField;
+    [SerializeField] Text MultiField;
+    [SerializeField] Text RecordText;
+    public GameObject ShitImg;
+    [SerializeField] Slider colourSlider;
+
+    [Header("Results")]
+    [SerializeField] Text ResultField;
     float Result;
     float ResultMoney;
-    [SerializeField] Text ResultField;
     [SerializeField] Text ResultMoneyField;
     [SerializeField] GameObject res;
-    [SerializeField] GameObject[] badMoneyRend;
-    [SerializeField] Material goodMat;
-    [SerializeField] Material badMat;
-    [SerializeField] Material badBagMat;
-    [SerializeField] Slider colourSlider;
-    public GameObject cam;
-    public GameController moving;
-    bool Pause2Check;
-    [SerializeField] Text RecordText;
+    [SerializeField] GameObject GameOver;
+    [SerializeField] GameObject goodjob;
+    [SerializeField] GameObject wip;
     void Start()
     {
         Button.SetActive(true);
@@ -134,7 +136,7 @@ public class UIManager : MonoBehaviour
         Pause2Check = false;
 
     }
-    public void Pauser2()//Пауза пока игра не началась
+    void Pauser2()//Пауза пока игра не началась
     {
         isPause = true;
         cont2.gameObject.SetActive(true);

@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
+    [Header("Menu Buttons")]
     [SerializeField] GameObject Startgame;
     [SerializeField] GameObject SelectLeveling;
     [SerializeField] GameObject CreditsButton;
@@ -12,19 +13,30 @@ public class MainMenu : MonoBehaviour
     [SerializeField] GameObject BackButton;
     [SerializeField] GameObject SelectLevelMenu;
     [SerializeField] GameObject ShopButton;
+
+    [Header("Shops")]
+    [SerializeField] Text RecordField;
     float Record;
     float Balance;
-    [SerializeField] Text RecordField;
+    float premBalance;
     [SerializeField] Text BalanceField;
+    [SerializeField] Text PremBalanceField;
     [SerializeField] GameObject ShopGrid;
     [SerializeField] SkinShopUI resetShop;
+    private void Awake()
+    {
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 60;
+    }
     private void Start()
     {
         var save = SaveManager.LoadProgress();
         Record = save.Record;
         Balance = save.Balance;
+        premBalance = save.PremiumBalance;
         RecordField.text = "Рекорд: " + Record.ToString("#,0").Replace(',', '\'');
         BalanceField.text = Balance.ToString("#,0").Replace(',', '\'');
+        PremBalanceField.text = premBalance.ToString("#,0").Replace(',', '\'');
     }
     public void Startlevel(int levelnum)
     {
@@ -46,7 +58,6 @@ public class MainMenu : MonoBehaviour
     }
     public void Credits()
     {
-
         CreditsText[0].gameObject.SetActive(true);
         BackButton.gameObject.SetActive(true);
         Startgame.gameObject.SetActive(false);
@@ -97,8 +108,8 @@ public class MainMenu : MonoBehaviour
 
         RecordField.text = "Рекорд: "+save.Record.ToString("#,0").Replace(',', '\'');
         BalanceField.text = save.Balance.ToString("#,0").Replace(',', '\'');
+        PremBalanceField.text = save.PremiumBalance.ToString("#,0").Replace(',', '\'');
 
         resetShop.ResetShop();
     }
-
 }

@@ -4,11 +4,11 @@ using UnityEngine.UI;
 
 public class SkinShopUI : MonoBehaviour
 {
-    public SkinCatalog skinCatalog;
-    public Transform contentRoot;
-    public GameObject skinShopItemPrefab;
-    public Text balanceText;
-    public Text premBalanceText;
+    [SerializeField] SkinCatalog skinCatalog;
+    [SerializeField] Transform contentRoot;
+    [SerializeField] GameObject skinShopItemPrefab;
+    [SerializeField] Text balanceText;
+    [SerializeField] Text premBalanceText;
 
     private HashSet<string> purchasedSkins = new HashSet<string>();
     private string activeSkinId;

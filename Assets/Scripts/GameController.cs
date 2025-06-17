@@ -3,32 +3,42 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    float TimeCycle; //ѕеременна€ дл€ подсчЄта очков
+    [Header("Controllers and scripts")]
+    [SerializeField] UIManager UI; //управлени€ UI игры
+    public PlayerControls playerMovement; //скрипт управлени€ игрока
+    [SerializeField] BonusSoundPlayer BonusSounds; //скрипт управл€ющий звуком бонусов
+    [SerializeField] ChunkPlacer triggerActivator; //скрипт процедурной генерации 
+    [SerializeField] WaterScroller waterSpeed; //скрипт дл€ движени€ текстуры воды
     public bool isTimerOn; //проверка запуска таймера игры
-    public bool isShield; //проверка наличи€ щита
-    public float multiply; //значение мультипликатора
+
+    [Header("Level Values")]
     [SerializeField] float moneybagValue; //значение 1 банкноты
     [SerializeField] float badMoneybagValue; //значение плохой банкноты
     [SerializeField] float moneyValue; //значение мешка с деньгами
     [SerializeField] float badMoneyValue; //значение плохого мешка с деньгами
-    [SerializeField] Vector3 startPos; //ѕозици€ откуда игрок начинает уровень
-    public Vector3 endPos; //ѕозици€ дл€ концовки игры
+    [SerializeField] float CreditcardMoney; //кол-во денег подобранных с кредитной карты
+    [SerializeField] float PointsRate; //кол-во очков в полсекунды
+    float TimeCycle; //ѕеременна€ дл€ подсчЄта очков
+
+    [Header("Player progress")]
     public float MoneyCount; //баланс игрока
     public float Points; //кол-во очков игрока
-    public float PointsRate; //кол-во очков в полсекунды
-    [SerializeField] float CreditcardMoney; //кол-во денег подобранных с кредитной карты
     public float CreditcardCount; //баланс игрока в кредитных карточках
-    [SerializeField] ChunkPlacer triggerActivator; //скрипт процедурной генерации 
-    [SerializeField] WaterScroller waterSpeed; //скрипт дл€ движени€ текстуры воды
-    AudioSource itemAudio; //источник звука предмета
+    public float multiply; //значение мультипликатора
+    public bool isShield; //проверка наличи€ щита
+
+    [Header("Audio Control")]
     public AudioSource playerAudio; //источник звука игрока
-    [SerializeField] BonusSoundPlayer BonusSounds; //скрипт управл€ющий звуком бонусов
+    AudioSource itemAudio; //источник звука предмета
     [SerializeField] AudioClip ShieldBreakSound; //аудиоклип лома щита  
     public AudioClip PointCountSound; //аудиоклип финального подсчЄта очков
     public AudioClip MoneyAdd; //аудиоклип перевода баланса игрока
     public AudioClip RoundEndSound; //аудиоклип конца игры
-    [SerializeField] UIManager UI; //управлени€ UI игры
-    public PlayerControls playerMovement; //скрипт управлени€ игрока
+
+    [Header("Start/end Level")]
+    [SerializeField] Vector3 startPos; //ѕозици€ откуда игрок начинает уровень
+    public Vector3 endPos; //ѕозици€ дл€ концовки игры
+
     private void Awake()
     {
         QualitySettings.vSyncCount = 0;

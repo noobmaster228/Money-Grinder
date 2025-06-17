@@ -9,7 +9,7 @@ public class SkyboxRandomizer : MonoBehaviour
         public Color fogColor;
     }
 
-    public SkyboxWithFog[] skyboxesWithFog;
+    [SerializeField] SkyboxWithFog[] skyboxesWithFog;
 
     void Start()
     {
